@@ -7,12 +7,13 @@
 }
 
 body {
-    background: rgb(224, 224, 224);
+    background: #fcfdfe !important;
     font-family: "Roboto", sans-serif;
 }
 
 h1,
 h2 {
+    color: #5A5A5A;
     font-weight: 500;
     font-size: 2rem;
 }
@@ -20,24 +21,18 @@ h2 {
 p {
     font-weight: 400;
     font-size: 1rem;
+    color: #5A5A5A;
     opacity: 85%;
     line-height: 35px;
 }
 
-a:link {
+a {
     text-decoration: none;
-}
-
-a:visited {
-    text-decoration: none;
+    color: unset;
 }
 
 a:hover {
-    text-decoration: node;
-}
-
-a:active {
-    text-decoration: none;
+    color: unset;
 }
 
 

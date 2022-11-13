@@ -1,41 +1,70 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './header.css';
+import { Container } from 'reactstrap';
+import { NavLink, Link } from 'react-router-dom';
+import logoImg from '../../assets/images/portrait.png';
+
+
+
+const NAV_LINKS = [
+    {
+        display: 'Accueil',
+        url: '/home'
+    },
+    {
+        display: 'Place de Marché',
+        url: '/market'
+    },
+    {
+        display: 'Créez',
+        url: '/create'
+    },
+    {
+        display: 'Contact',
+        url: '/contact'
+    }
+]
 
 const Header = () => {
     return (
-        <header className='header'>
-            <div className='container'>
+        <header className="header">
+            <Container>
                 <div className="navigation">
                     <div className="logo">
-                        <h2 className=' d-flex gap-2 align-items-center'>
-                            <img src="logo.png" alt="logo" />
+                        <Link to="/home"><h2 className=' d-flex gap-2 align-items-center'>
+                            <span>
+                                <img src={logoImg} alt="" />
+                            </span>
                             Democratiz Art
-                        </h2>
+                        </h2></Link>
                     </div>
+
+
+
+
+
                     <div className="nav_menu">
                         <ul className="nav_list">
-                            <NavLink to="/" className={(nav) => (nav.isActive ? "active" : "")}>
-                                <li className="nav_item">Accueil</li>
-                            </NavLink>
-                            <NavLink to="/market">
-                                <li className="nav_item">MarketPlace</li>
-                            </NavLink>
-                            <NavLink to="/create">
-                                <li className="nav_item">Créez</li>
-                            </NavLink>
-                            <NavLink to="/contact">
-                                <li className="nav_item">Contact</li>
-                            </NavLink>
+                            {NAV_LINKS.map((item, index) => (
+                                <li className="nav_item" key={index}>
+                                    <NavLink to={item.url} className={navClass => navClass.isActive ? 'active' : ''}
+                                    >
+                                        {item.display}
+                                    </NavLink>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    <div className='nav_right d-flex align-items-center gap-5'>
+                    <div className="nav_right d-flex align-items-center gap-5 ">
                         <button className='btn d-flex gap-2 align-items-center'>
                             <span>
                                 <i className="ri-wallet-line"></i>
                             </span>
-                            <NavLink to='/wallet'>Connect Wallet</NavLink>
+                            <Link to='/#'>
+
+                                Connexion Wallet
+                            </Link>
                         </button>
 
                         <span className="mobile_menu">
@@ -43,8 +72,8 @@ const Header = () => {
                         </span>
                     </div>
                 </div>
-            </div>
-        </header>
+            </Container>
+        </header >
     );
 };
 
