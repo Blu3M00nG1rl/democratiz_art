@@ -1,0 +1,90 @@
+.trending_section {
+    background: #f2f1f8 !important;
+}
+
+.single_nft_card {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.nft_img img {
+    border-radius: 10px;
+    height: 270px;
+    width: 270px;
+}
+
+.nft_img {
+    margin-bottom: 15px;
+}
+
+.nft_title {
+    margin-bottom: 15px;
+}
+
+.nft_title a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #8B8B8B;
+}
+
+.nft_title a:hover {
+    color: #0EC0C8;
+}
+
+.creator_img {
+    width: 40px;
+    height: 40px;
+}
+
+.creator_info h6 {
+    font-size: 0.7rem;
+    opacity: 80%;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+.creator_info p {
+    font-size: .9rem;
+    opacity: 100%;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.buy_btn {
+    border: none;
+    outline: none;
+    padding: 5px 22px;
+    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+    font-size: .9rem;
+    color: #fff;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.buy_btn:hover {
+    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+    color: #fff;
+    opacity: 65%;
+}
+
+.history_link a {
+    text-decoration: none;
+    color: #8B8B8B;
+    opacity: 85%;
+    font-size: .9rem;
+}
+
+.history_link a:hover {
+    color: #0EC0C8;
+}
+
+.trending_auction_top h3 {
+    color: #5A5A5A;
+}
+
+.trending_auction_top span a {
+    text-decoration: none;
+    color: #8B8B8B;
+    border-bottom: 1px solid #0EC0C8;
+}

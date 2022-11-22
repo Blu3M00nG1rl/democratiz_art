@@ -64,7 +64,7 @@
 }
 
 .nav_right .btn a:hover {
-    color: #fff;
+    opacity: 65%;
 }
 
 .mobile_menu {

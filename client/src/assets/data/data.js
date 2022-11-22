@@ -18,55 +18,55 @@ import ava07 from "../images/ava-07.png";
 import ava08 from "../images/ava-08.png";
 import ava09 from "../images/ava-09.png";
 
-export const NFT__DATA = [
+export const NFT_DATA = [
     {
         id: "01",
-        title: "Colorful Oil Painting",
-        desc: "Peinture à l'huile, fond abstrait.",
+        title: "Flowers in a Metal Vase",
+        desc: " Institution: Mauritshuis.",
         imgUrl: img01,
-        creator: "Vikorn Sarathailand",
-        creatorImg: ava01,
-        currentBid: 5.89,
+        creator: "Abraham Mignon",
+        creatorImg: ava02,
+        price: 5.89,
     },
 
     {
         id: "02",
-        title: "Portrait Young Woman",
-        desc: "Portrait d'une jeune femme couverte de peinture noire.",
+        title: "Cityscape",
+        desc: "Part of the 'Cityscape' painting at Jenegallery.",
         imgUrl: img02,
-        creator: "Master 1305",
-        creatorImg: ava02,
-        currentBid: 5.09,
+        creator: "Jene",
+        creatorImg: ava01,
+        price: 5.09,
     },
 
     {
         id: "03",
-        title: "Rembrandt The Artist",
-        desc: "L'artiste dans son studio",
+        title: "It came with a wave",
+        desc: "and washed slowly ashore. Exactly what is it I crave, beneath this ocean floor? It comes in waves, and so I held my breath. But this despair enslaves and I remembered death. Sky and ocean rising; And in full living colour became a fine horizon. What beauty to discover. It was never down there, it was always up here.",
         imgUrl: img03,
-        creator: "Rembrandt",
+        creator: "Henrik Dønnestad",
         creatorImg: ava03,
-        currentBid: 6.89,
+        price: 6.89,
     },
 
     {
         id: "04",
-        title: "Taras Schevchenko Selfportrait",
-        desc: "Autoportrait 1840",
+        title: "Original painting",
+        desc: "",
         imgUrl: img04,
-        creator: "Taras Schevchenko",
-        creatorImg: ava04,
-        currentBid: 7.89,
+        creator: "Steve J.",
+        creatorImg: ava05,
+        price: 7.89,
     },
 
     {
         id: "05",
-        title: "Vintage Landscape",
-        desc: "Paysage avec gondoles.",
+        title: "The Phantom Horseman",
+        desc: "",
         imgUrl: img05,
-        creator: "Bedney",
-        creatorImg: ava05,
-        currentBid: 4.89,
+        creator: "Sir John Gilbert",
+        creatorImg: ava04,
+        price: 4.89,
     },
 
     {
@@ -76,7 +76,7 @@ export const NFT__DATA = [
         imgUrl: img06,
         creator: "Johannes Vermeer",
         creatorImg: ava06,
-        currentBid: 4.99,
+        price: 4.99,
     },
 
     {
@@ -86,7 +86,7 @@ export const NFT__DATA = [
         imgUrl: img07,
         creator: "Rembrandt",
         creatorImg: ava03,
-        currentBid: 5.89,
+        price: 5.89,
     },
 
     {
@@ -96,7 +96,7 @@ export const NFT__DATA = [
         imgUrl: img08,
         creator: "Taras Schevchenko",
         creatorImg: ava04,
-        currentBid: 5.89,
+        price: 5.89,
     },
 
     {
@@ -106,17 +106,17 @@ export const NFT__DATA = [
         imgUrl: img09,
         creator: "Bedney",
         creatorImg: ava05,
-        currentBid: 5.89,
+        price: 5.89,
     },
 ];
 
-export const SELLER__DATA = [
+export const SELLER_DATA = [
     {
         id: "01",
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam adipisci cupiditate officia",
         sellerName: "Vikorn Sarathailand",
         sellerImg: ava01,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -127,7 +127,7 @@ export const SELLER__DATA = [
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam adipisci cupiditate officia",
         sellerName: "Master 1305",
         sellerImg: ava02,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -138,7 +138,7 @@ export const SELLER__DATA = [
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam adipisci cupiditate officia",
         sellerName: "Rembrandt",
         sellerImg: ava03,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -151,7 +151,7 @@ export const SELLER__DATA = [
 
         sellerName: "Taras Schevchenko",
         sellerImg: ava04,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -164,7 +164,7 @@ export const SELLER__DATA = [
 
         sellerName: "Bedney",
         sellerImg: ava05,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -177,7 +177,7 @@ export const SELLER__DATA = [
 
         sellerName: "Johannes Vermeer",
         sellerImg: ava06,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -188,7 +188,7 @@ export const SELLER__DATA = [
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam adipisci cupiditate officia",
         sellerName: "Vikorn Sarathailand",
         sellerImg: ava01,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -199,7 +199,7 @@ export const SELLER__DATA = [
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam adipisci cupiditate officia",
         sellerName: "Master 1305",
         sellerImg: ava02,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -210,7 +210,7 @@ export const SELLER__DATA = [
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam adipisci cupiditate officia",
         sellerName: "Rembrandt",
         sellerImg: ava03,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -223,7 +223,7 @@ export const SELLER__DATA = [
 
         sellerName: "Taras Schevchenko",
         sellerImg: ava04,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -236,7 +236,7 @@ export const SELLER__DATA = [
 
         sellerName: "Bedney",
         sellerImg: ava05,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -249,7 +249,7 @@ export const SELLER__DATA = [
 
         sellerName: "Johannes Vermeer",
         sellerImg: ava06,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -262,7 +262,7 @@ export const SELLER__DATA = [
 
         sellerName: "Diego Velázquez",
         sellerImg: ava07,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -275,7 +275,7 @@ export const SELLER__DATA = [
 
         sellerName: "Adriaen van Ostade",
         sellerImg: ava08,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
@@ -288,7 +288,7 @@ export const SELLER__DATA = [
 
         sellerName: "Trista Francis",
         sellerImg: ava09,
-        currentBid: 5.89,
+        price: 5.89,
         fbUrl: "#",
         instaUrl: "#",
         twitUrl: "#",
