@@ -12,6 +12,8 @@
     border-radius: 10px;
     height: 270px;
     width: 270px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .nft_img {
