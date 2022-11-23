@@ -40,7 +40,7 @@
 }
 
 .hero_btns button a:hover {
-    opacity: 65% !important;
+    color: #151964;
 }
 
 .hero_img {

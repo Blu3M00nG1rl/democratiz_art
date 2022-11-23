@@ -39,14 +39,12 @@
 
 .creator_info h6 {
     font-size: 0.7rem;
-    opacity: 80%;
     margin-bottom: 0;
     font-weight: 300;
 }
 
 .creator_info p {
     font-size: .9rem;
-    opacity: 100%;
     margin-bottom: 0;
     font-weight: 500;
 }
@@ -63,15 +61,12 @@
 }
 
 .buy_btn:hover {
-    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
-    color: #fff;
-    opacity: 65%;
+    color: #151964;
 }
 
 .history_link a {
     text-decoration: none;
     color: #8B8B8B;
-    opacity: 85%;
     font-size: .9rem;
 }
 
