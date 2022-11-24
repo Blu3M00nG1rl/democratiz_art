@@ -5,6 +5,7 @@
 .seller_img {
     width: 80px !important;
     height: 80px !important;
+    clip-path: circle();
 }
 
 .seller_content h6 {

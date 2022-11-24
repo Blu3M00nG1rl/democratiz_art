@@ -11,16 +11,16 @@ import img10 from "../images/img-10.jpg";
 import img11 from "../images/img-11.jpg";
 import img12 from "../images/img-12.jpg";
 
-import ava01 from "../images/ava-01.png";
-import ava02 from "../images/ava-02.png";
+import ava01 from "../images/av01.jpg";
+import ava02 from "../images/av02.jpg";
 import ava03 from "../images/ava-03.png";
 import ava04 from "../images/ava-04.png";
-import ava05 from "../images/ava-05.png";
+import ava05 from "../images/av05.jpg";
 import ava06 from "../images/ava-06.png";
 import ava07 from "../images/ava-07.png";
-import ava08 from "../images/ava-08.png";
+import ava08 from "../images/av08.jpg";
 import ava09 from "../images/ava-09.png";
-import ava10 from "../images/ava-10.png";
+import ava10 from "../images/av10.jpg";
 import ava11 from "../images/ava-11.png";
 import ava12 from "../images/ava-12.png";
 
