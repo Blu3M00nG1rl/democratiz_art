@@ -1,0 +1,12 @@
+.seller_section {
+    background: #f2f1f8 !important;
+}
+
+.seller_img {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+.seller_content h6 {
+    font-size: 1rem;
+}
