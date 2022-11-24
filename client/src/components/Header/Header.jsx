@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import './header.css';
 import { Container } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
@@ -8,40 +8,48 @@ import logoImg from '../../assets/images/portrait.png';
 
 const NAV_LINKS = [
     {
-        display: 'Accueil',
-        url: '/home'
-    },
-    {
-        display: 'Place de Marché',
+        display: 'Explorer',
         url: '/market'
     },
     {
-        display: 'Créez',
-        url: '/create'
+        display: 'Artistes',
+        url: '/artist'
     },
     {
-        display: 'Contact',
-        url: '/contact'
+        display: 'Profil',
+        url: '/profil'
     }
 ]
 
 const Header = () => {
+
+    const headerRef = useRef(null)
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                headerRef.current.classList.add('header_shrink');
+            }
+            else {
+                headerRef.current.classList.remove('header_shrink');
+            }
+        })
+        return () => {
+            window.removeEventListener('scroll')
+        }
+    }, [])
+
     return (
-        <header className="header">
+        <header className="header" ref={headerRef}>
             <Container>
                 <div className="navigation">
                     <div className="logo">
-                        <Link to="/home"><h2 className=' d-flex gap-2 align-items-center'>
+                        <Link to="/home"><h2 className='d-flex gap-2 align-items-center'>
                             <span>
                                 <img src={logoImg} alt="" />
                             </span>
-                            Democratiz Art
                         </h2></Link>
                     </div>
-
-
-
-
 
                     <div className="nav_menu">
                         <ul className="nav_list">

@@ -11,12 +11,11 @@ const HeroSection = () => {
             <Row>
                 <Col lg='6' md='6'>
                     <div className="hero_content">
-                        <h2>Phrase d'accroche : Découvrez des oeuvres d'art IRL à<span> collectionner et vendre sous forme de NFT</span></h2>
-                        <p>Phrase de description : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente quos totam soluta doloribus doloremque architecto natus ut sed modi ea.</p>
-
+                        <h2>DEMOCRATIZ_
+                            <span>ART </span></h2>
+                        <p>Collectionnez et entrez en contact avec vos artistes préférés en achetant des NFTs liés à leurs oeuvres.</p>
                         <div className="hero_btns d-flex align-items-center gap-4">
-                            <button className='explore_btn d-flex align-items-center gap-2'><i className="ri-rocket-line"></i><Link to="/market">Explorer</Link></button>
-                            <button className='create_btn d-flex align-items-center gap-2'><i className="ri-ball-pen-line"></i><Link to="/create">Créer</Link></button>
+                            <button className='explore_btn d-flex align-items-center gap-2'><i className="ri-rocket-line"></i><Link to="/market">Market Place</Link></button>
                         </div>
                     </div>
                 </Col>

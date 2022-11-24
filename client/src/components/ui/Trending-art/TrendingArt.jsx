@@ -14,8 +14,8 @@ const TrendingArt = () => {
             <Row>
                 <Col lg="12" className='mb-5'>
                     <div className="trending_auction_top d-flex align-items-center justify-content-between">
-                        <h3>Oeuvres Populaires</h3>
-                        <span><Link to="/market">Explorer plus</Link></span>
+                        <h3>Top Collections</h3>
+                        <span><Link to="/market">Voir toutes les collections</Link></span>
                     </div>
                 </Col>
 

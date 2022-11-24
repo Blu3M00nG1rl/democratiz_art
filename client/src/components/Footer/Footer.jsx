@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Container, ListGroup, ListGroupItem, Row } from 'reactstrap';
 import './footer.css';
-import logoImg from '../../assets/images/portrait.png';
 
 const MY_ACCOUNT = [
     {
@@ -68,12 +67,11 @@ const Footer = () => {
                 <Col lg="3" md="6" sm="6">
                     <div className="logo">
                         <h2 className=' d-flex gap-2 align-items-center'>
-                            <span>
-                                <img src={logoImg} alt="" />
-                            </span>
-                            Democratiz Art
+                            ARTISTES, REJOIGNEZ NOTRE COMMUNAUTÉ
                         </h2>
-                        <p>Description du site : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nemo laborum sit! Aperiam, quod mollitia. Dolorem tempora quaerat animi ab!</p>
+                        <p>DEMOCRATIZ_ART est une plateforme ouverte à tous les artistes plasticiens professionnels ou en devenir.<br />
+                            Nous vous aidons à digitaliser vos oeuvres physiques et les mettons en vente sous forme de NFT ouvrant des bénéfices uniques à leurs acquéreurs
+                        </p>
                     </div>
                 </Col>
                 <Col lg="2" md="3" sm="6">

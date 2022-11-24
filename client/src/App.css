@@ -45,3 +45,16 @@ section,
 footer {
     padding: 60px 0px;
 }
+
+
+/* ==================== custom scroll-bar ===================*/
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: #343444;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 2em;
+    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+}

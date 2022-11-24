@@ -9,6 +9,11 @@
     background: #ffffff;
 }
 
+.header_shrink {
+    background: #ffffff;
+    box-shadow: 2px 2px 4px -2px #0EC0C8;
+}
+
 .navigation {
     display: flex;
     align-items: center;
@@ -19,6 +24,7 @@
     display: flex;
     align-items: center;
     column-gap: 2.7rem;
+    margin-bottom: 0;
 }
 
 .nav_item a {
@@ -36,6 +42,7 @@
 
 .logo h2 {
     color: #151964;
+    margin-bottom: 0;
 }
 
 .logo img {

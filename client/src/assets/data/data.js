@@ -26,7 +26,7 @@ export const NFT_DATA = [
         imgUrl: img01,
         creator: "Abraham Mignon",
         creatorImg: ava02,
-        price: 5.89,
+        price: 58900,
     },
 
     {
@@ -36,7 +36,7 @@ export const NFT_DATA = [
         imgUrl: img02,
         creator: "Jene",
         creatorImg: ava01,
-        price: 5.09,
+        price: 50900,
     },
 
     {
@@ -46,7 +46,7 @@ export const NFT_DATA = [
         imgUrl: img03,
         creator: "Henrik Dønnestad",
         creatorImg: ava03,
-        price: 6.89,
+        price: 68900,
     },
 
     {
@@ -56,7 +56,7 @@ export const NFT_DATA = [
         imgUrl: img04,
         creator: "Steve J.",
         creatorImg: ava05,
-        price: 7.89,
+        price: 78900,
     },
 
     {
