@@ -23,7 +23,7 @@
     padding: 7px 25px !important;
     border-radius: 50px !important;
     border: 1px !important;
-    font-size: .9rem;
+    font-size: 0.9rem;
     background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
 }
 
@@ -44,10 +44,53 @@
 }
 
 .hero_img {
-    width: 500px;
     margin-left: auto;
 }
 
 .hero_img img {
     border-radius: 7px;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width:992px) {
+    .hero_img {
+        width: 300px;
+    }
+
+    .hero_section {
+        margin-top: 90px;
+    }
+
+    .hero_content h2 {
+        font-size: 1.5rem;
+        line-height: 40px;
+    }
+
+    .hero_content p {
+        font-size: 0.8rem;
+        line-height: 25px;
+    }
+
+
+    .explore_btn {
+        padding: 4px 25px !important;
+
+    }
+
+    .explore_btn a {
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (max-width:576px) {
+    .hero_img {
+        width: 100%;
+        margin: auto;
+        margin-top: 50px;
+    }
 }

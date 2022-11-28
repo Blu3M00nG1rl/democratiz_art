@@ -12,6 +12,7 @@ const Home = () => {
         <LiveSell />
         <SellerSection />
         <Trending />
+        <StepSection />
     </>
 };
 

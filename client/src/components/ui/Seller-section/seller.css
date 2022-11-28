@@ -10,4 +10,15 @@
 
 .seller_content h6 {
     font-size: 1rem;
+    color: #5A5A5A;
+}
+
+.seller_section-title h3 {
+    color: #5A5A5A;
+}
+
+@media only screen and (max-width:992px) {
+    .seller_content h6 {
+        font-size: 0.8rem !important;
+    }
 }

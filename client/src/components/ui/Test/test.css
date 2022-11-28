@@ -1,0 +1,18 @@
+.test_section {
+    background: #f2f1f8 !important;
+    margin-top: 50px;
+}
+
+.puzzle {
+    background-image: url(../../../assets/nfts/img-01.jpg);
+    width: 100px;
+    height: 100px;
+}
+
+.piece1 {
+    background-position: 0 0
+}
+
+.piece2 {
+    background-position: -100px -100px
+}

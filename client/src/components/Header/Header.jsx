@@ -23,7 +23,9 @@ const NAV_LINKS = [
 
 const Header = () => {
 
-    const headerRef = useRef(null)
+    const headerRef = useRef(null);
+
+    const menuRef = useRef(null);
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -39,6 +41,8 @@ const Header = () => {
         }
     }, [])
 
+    const toggleMenu = () => menuRef.current.classList.toggle('active_menu');
+
     return (
         <header className="header" ref={headerRef}>
             <Container>
@@ -51,7 +55,7 @@ const Header = () => {
                         </h2></Link>
                     </div>
 
-                    <div className="nav_menu">
+                    <div className="nav_menu" ref={menuRef} onClick={toggleMenu}>
                         <ul className="nav_list">
                             {NAV_LINKS.map((item, index) => (
                                 <li className="nav_item" key={index}>
@@ -76,7 +80,7 @@ const Header = () => {
                         </button>
 
                         <span className="mobile_menu">
-                            <i className="ri-menu-line"></i>
+                            <i className="ri-menu-line" onClick={toggleMenu}></i>
                         </span>
                     </div>
                 </div>

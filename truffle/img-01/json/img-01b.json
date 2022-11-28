@@ -1,0 +1,15 @@
+{
+    "name": "FlowersNFT",
+    "description": "FlowersBottom",
+    "image": "https://gateway.pinata.cloud/ipfs/QmcYAKNMnCb3NYk1kHPfNGAgJEKgw27ZXsyDHkkXLXNGg6/img-01b.jpg",
+    "attribute": [
+        {
+            "trait_type": "position",
+            "value": "bottom"
+        },
+        {
+            "trait_type": "numero",
+            "value": "2"
+        }
+    ]
+}

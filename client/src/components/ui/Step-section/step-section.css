@@ -1,0 +1,46 @@
+.step_section {
+    background: #f2f1f8 !important;
+}
+
+.single_step_item {
+    background: #fff;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.step_title {
+    color: #5A5A5A;
+}
+
+.step_item_content h5 a {
+    text-decoration: none;
+    color: #8B8B8B;
+}
+
+.step_item_content a:hover {
+    color: #0EC0C8;
+}
+
+.single_step_item span i {
+    color: #fff;
+    padding: 20px;
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+    border-radius: 5px;
+}
+
+.step_item_content {
+    margin-top: 20px !important;
+}
+
+@media only screen and (max-width:992px) {
+    .step_item_content h5 a {
+        font-size: 1rem;
+    }
+
+    .single_step_item p {
+        font-size: 0.8rem;
+        line-height: 25px;
+    }
+
+}

@@ -1,3 +1,7 @@
 .trending_section {
     background: #f2f1f8 !important;
 }
+
+.trending_section-title h3 {
+    color: #5A5A5A;
+}

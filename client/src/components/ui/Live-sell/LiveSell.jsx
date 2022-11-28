@@ -1,5 +1,6 @@
 
 
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
@@ -8,7 +9,7 @@ import "./live-sell.css";
 import NftCard from '../Nft-card/NftCard';
 import { NFT_DATA } from '../../../assets/data/data.js';
 
-const liveArt = () => {
+const liveSell = () => {
     return <section className="live_section">
         <Container>
             <Row>
@@ -21,7 +22,7 @@ const liveArt = () => {
 
 
                 {NFT_DATA.slice(0, 4).map((item) => (
-                    <Col lg="3">
+                    <Col lg="3" md='4' sm='6' className='mb-4'>
                         <NftCard key={item.id} item={item} />
                     </Col>
                 ))}
@@ -30,4 +31,4 @@ const liveArt = () => {
     </section>
 };
 
-export default liveArt;
+export default liveSell;
