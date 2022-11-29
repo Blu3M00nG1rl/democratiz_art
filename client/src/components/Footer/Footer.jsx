@@ -67,10 +67,10 @@ const Footer = () => {
                 <Col lg="3" md="6" sm="6" className='mb-4'>
                     <div className="logo">
                         <h2 className=' d-flex gap-2 align-items-center'>
-                            ARTISTES, REJOIGNEZ NOTRE COMMUNAUTÉ
+                            VOUS ÊTES UN ARTISTES ?  REJOIGNEZ NOTRE COMMUNAUTÉ
                         </h2>
                         <p>DEMOCRATIZ_ART est une plateforme ouverte à tous les artistes plasticiens professionnels ou en devenir.<br />
-                            Nous vous aidons à digitaliser vos oeuvres physiques et les mettons en vente sous forme de NFT ouvrant des bénéfices uniques à leurs acquéreurs
+                            Nous vous aidons à digitaliser et fractionner vos oeuvres physiques pour les rendre accessibles à tous. Nous les mettons en vente sous forme de NFT ouvrant des bénéfices uniques à leurs acquéreurs.
                         </p>
                     </div>
                 </Col>

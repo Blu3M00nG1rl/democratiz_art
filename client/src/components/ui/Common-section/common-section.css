@@ -1,0 +1,7 @@
+.common_section {
+    background: url('../../../assets/images/bg.jpg');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 150px;
+}

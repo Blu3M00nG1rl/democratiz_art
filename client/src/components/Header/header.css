@@ -14,6 +14,14 @@
     box-shadow: 2px 2px 4px -2px #0EC0C8;
 }
 
+.logo h2 span {
+    color: #151964;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
 .navigation {
     display: flex;
     align-items: center;

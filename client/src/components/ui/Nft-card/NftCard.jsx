@@ -12,7 +12,7 @@ const NftCard = (props) => {
 
     return <div className="single_nft_card">
         <div className="nft_img">
-            <img src={imgUrl} alt="" />
+            <Link to={`/market/${id}`}><img src={imgUrl} alt="" /></Link>
         </div>
 
         <div className="nft_content">

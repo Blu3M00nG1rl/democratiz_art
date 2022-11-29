@@ -1,0 +1,16 @@
+.all_category_filter select,
+.filter_right select,
+.our_artists {
+    padding: 8px 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.our_artists a:hover {
+    color: #0EC0C8;
+    ;
+}

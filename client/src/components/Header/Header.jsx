@@ -52,6 +52,8 @@ const Header = () => {
                             <span>
                                 <img src={logoImg} alt="" />
                             </span>
+                            <h2>DEMOCRATIZ_
+                                <span>ART </span></h2>
                         </h2></Link>
                     </div>
 

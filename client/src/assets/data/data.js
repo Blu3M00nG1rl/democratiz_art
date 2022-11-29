@@ -29,7 +29,7 @@ export const NFT_DATA = [
     {
         id: "01",
         title: "Flowers in a Metal Vase",
-        desc: " Institution: Mauritshuis.",
+        desc: " Institution: Mauritshuis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae provident, optio doloremque, aut sed cumque eum accusantium fugiat necessitatibus omnis repellendus? Eaque odit, cumque nobis impedit commodi accusamus amet facere quibusdam ex, id consequatur facilis, incidunt sapiente fugiat natus modi!",
         imgUrl: img01,
         creator: "Abraham Mignon",
         creatorImg: ava02,
@@ -39,7 +39,7 @@ export const NFT_DATA = [
     {
         id: "02",
         title: "Cityscape",
-        desc: "Part of the 'Cityscape' painting at Jenegallery.",
+        desc: "Part of the 'Cityscape' painting at Jenegallery. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores eligendi cumque aliquam, in quo quam architecto cum tenetur laborum, delectus hic! Autem aliquid tenetur blanditiis, asperiores itaque alias totam cumque eos optio culpa exercitationem quasi iure vitae facere mollitia dicta!",
         imgUrl: img02,
         creator: "Jene City",
         creatorImg: ava01,
@@ -59,7 +59,7 @@ export const NFT_DATA = [
     {
         id: "04",
         title: "Original painting",
-        desc: "",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quia incidunt quis tempora asperiores illum inventore at, porro unde, veritatis nihil possimus, eum modi pariatur corporis doloribus dolore. Inventore et porro tempora aut. Sint dolores quas quasi enim soluta itaque.",
         imgUrl: img04,
         creator: "Steve Johnson",
         creatorImg: ava05,
@@ -69,7 +69,7 @@ export const NFT_DATA = [
     {
         id: "05",
         title: "The Cannon Shot",
-        desc: "",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, laudantium reiciendis. Molestias, illum minima praesentium tempora voluptas beatae nostrum magnam, molestiae a vel architecto explicabo fugit sequi at alias perferendis culpa dolor animi? Adipisci, aut? Modi tenetur adipisci ea sit!",
         imgUrl: img05,
         creator: "Johana Gilbert",
         creatorImg: ava04,
@@ -79,7 +79,7 @@ export const NFT_DATA = [
     {
         id: "06",
         title: "The Art Of Painting",
-        desc: "Painting pattern.",
+        desc: "Painting pattern. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore laboriosam, magnam nisi eum dolorem suscipit. Natus molestias libero accusantium, voluptate fuga iste deserunt cupiditate delectus omnis labore quibusdam, dicta temporibus voluptatem reiciendis. Natus perspiciatis ratione fugit iusto pariatur vel numquam.",
         imgUrl: img06,
         creator: "Vojtech Bruzek",
         creatorImg: ava06,
@@ -89,7 +89,7 @@ export const NFT_DATA = [
     {
         id: "07",
         title: "The River Severn at Shrewsbury",
-        desc: "La Famille de Philippe IV peint en 1656.",
+        desc: "La Famille de Philippe IV peint en 1656. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, iste. Repellat reiciendis minima dolor, deserunt molestias, eum eligendi nisi quae possimus cumque modi eveniet temporibus numquam beatae est at dolore quos? Similique quia maiores quas, error cupiditate dolorem eveniet omnis.",
         imgUrl: img07,
         creator: "Paul Sandby",
         creatorImg: ava07,
@@ -99,7 +99,7 @@ export const NFT_DATA = [
     {
         id: "08",
         title: "Yellow-billed magpie",
-        desc: "Yellow-billed magpie, Stellers jay, Ultramarine jay and Clark's crow.",
+        desc: "Yellow-billed magpie, Stellers jay, Ultramarine jay and Clark's crow. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quasi aut cum quia ut. Incidunt porro tenetur magni accusantium consectetur exercitationem earum repudiandae in, quidem iure sequi eum vel assumenda maxime dolorem reiciendis ducimus excepturi libero debitis obcaecati. Vel, fugit!",
         imgUrl: img08,
         creator: "John James",
         creatorImg: ava08,
@@ -109,7 +109,7 @@ export const NFT_DATA = [
     {
         id: "09",
         title: "14th Street,",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quam minus qui.",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ratione dolore assumenda qui, tempora exercitationem pariatur iste minima doloremque corrupti reiciendis est quidem libero odit commodi. Facilis voluptatem iste qui illum animi deleniti quia aut quaerat, ipsam odio, aspernatur vel?",
         imgUrl: img09,
         creator: "River Ohio",
         creatorImg: ava09,
@@ -119,7 +119,7 @@ export const NFT_DATA = [
     {
         id: "10",
         title: "Milano",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur vel voluptatum fugiat!",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto fugiat accusantium architecto assumenda tempore similique eum quia, beatae odit est suscipit dolorem quae cupiditate, quaerat sequi quisquam eius laboriosam. Nobis, natus at vel illo a libero pariatur. Voluptas, delectus eaque!",
         imgUrl: img10,
         creator: "Luca Nicoletti",
         creatorImg: ava10,
@@ -129,7 +129,7 @@ export const NFT_DATA = [
     {
         id: "11",
         title: "Portrait",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum soluta ab numquam?.",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus soluta assumenda eligendi nulla pariatur sequi laborum ipsam, ratione dignissimos sunt culpa nihil similique voluptatem necessitatibus cupiditate autem, at vel fugiat quod rem officiis perspiciatis accusantium nesciunt saepe! Pariatur, magnam quisquam.",
         imgUrl: img11,
         creator: "Fuu J",
         creatorImg: ava11,
@@ -139,7 +139,7 @@ export const NFT_DATA = [
     {
         id: "12",
         title: "Venise",
-        desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium expedita illum laboriosam..",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestiae repellendus, nemo eos voluptates quis incidunt quo, voluptatibus, autem laudantium possimus ipsam reprehenderit rerum! Dolorum quis veritatis aperiam quibusdam, repudiandae temporibus voluptas enim laborum at veniam architecto. Rem, tempore libero!",
         imgUrl: img12,
         creator: "Ricardo Gomez Angel",
         creatorImg: ava12,
