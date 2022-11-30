@@ -13,7 +13,7 @@ const Trending = () => {
         <Container>
             <Row>
                 <Col lg='12' className='trending_section-title mb-5'>
-                    <h3 className="trending title">Top Collections</h3>
+                    <h3 className="trending title">Les Top Collections</h3>
                 </Col>
 
                 {

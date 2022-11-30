@@ -1,6 +1,6 @@
 .all_category_filter select,
-.filter_right select,
-.our_artists {
+.our_artists,
+.top_collection {
     padding: 8px 25px;
     font-size: 0.9rem;
     cursor: pointer;
@@ -10,7 +10,12 @@
     background: #fff;
 }
 
-.our_artists a:hover {
-    color: #0EC0C8;
-    ;
+@media only screen and (max-width:768px) {
+
+    .all_category_filter select,
+    .our_artists,
+    .top_collection {
+        padding: 5px 20px;
+        font-size: 0.6rem;
+    }
 }

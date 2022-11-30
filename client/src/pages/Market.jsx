@@ -4,13 +4,13 @@ import CommonSection from '../components/ui/Common-section/CommonSection';
 import NftCard from '../components/ui/Nft-card/NftCard';
 import { NFT_DATA } from '../assets/data/data.js';
 import '../styles/market.css';
+import { useState } from 'react';
 
 const Market = () => {
 
+    const [data, setData] = useState(NFT_DATA);
+
     const handleCategory = () => { };
-
-    const handleSort = () => { };
-
 
     return <>
         <CommonSection title={'MarketPlace'} />
@@ -28,24 +28,17 @@ const Market = () => {
                                         <option value="sculpture">Sculpture</option>
                                         <option value="dessin">Dessin</option>
                                         <option value="photo">Photo</option>
-                                        <option value="top-collection">Top Collection</option>
                                     </select>
+                                </div>
+
+                                <div className="top_collection">
+                                    <h6>Top Collection</h6>
                                 </div>
 
                                 <div className="our_artists">
                                     <h6>Nos Artistes</h6>
                                 </div>
                             </div>
-
-                            <div className="filter_right">
-                                <select onChange={handleSort}>
-                                    <option>Trier par</option>
-                                    <option value="high">Prix Décroissant</option>
-                                    <option value="low">Prix Croissant</option>
-                                </select>
-                            </div>
-
-
 
                         </div>
                     </Col>

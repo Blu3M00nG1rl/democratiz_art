@@ -69,8 +69,8 @@
     color: #fff;
 }
 
-.nav_right .btn a:hover {
-    color: #151964;
+.nav_right .btn:hover {
+    background: linear-gradient(90deg, rgb(0, 180, 237) -2.21%, rgb(0, 203, 130) 100%);
 }
 
 .mobile_menu {

@@ -64,17 +64,23 @@ const Footer = () => {
     return <footer className="footer">
         <Container>
             <Row>
-                <Col lg="3" md="6" sm="6" className='mb-4'>
-                    <div className="logo">
-                        <h2 className=' d-flex gap-2 align-items-center'>
-                            VOUS ÊTES UN ARTISTES ?  REJOIGNEZ NOTRE COMMUNAUTÉ
-                        </h2>
-                        <p>DEMOCRATIZ_ART est une plateforme ouverte à tous les artistes plasticiens professionnels ou en devenir.<br />
-                            Nous vous aidons à digitaliser et fractionner vos oeuvres physiques pour les rendre accessibles à tous. Nous les mettons en vente sous forme de NFT ouvrant des bénéfices uniques à leurs acquéreurs.
-                        </p>
-                    </div>
+                <Col lg="12" md="12" sm="12" className='foot_tb mb-4 text-center'>
+                    <h2>
+                        VOUS ÊTES UN ARTISTES ?  REJOIGNEZ NOTRE COMMUNAUTÉ
+                    </h2>
+                    <p>DEMOCRATIZ_ART est une plateforme ouverte à tous les artistes plasticiens professionnels ou en devenir.
+                        Nous vous aidons à digitaliser et fractionner vos oeuvres physiques pour les rendre accessibles à tous. Nous les mettons en vente sous forme de NFT ouvrant des bénéfices uniques à leurs acquéreurs.
+                    </p>
+                    <button className='btn d-flex gap-2 align-items-center'>
+                        <span>
+                            <i className="ri-global-line"></i>
+                        </span>
+                        <Link to='/#' class>
+                            Rejoignez Nous
+                        </Link>
+                    </button>
                 </Col>
-                <Col lg="2" md="3" sm="6" className='mb-4'>
+                <Col lg="3" md="4" sm="6" className='foot_refs mb-4'>
                     <h5>Mon Compte</h5>
                     <ListGroup className='list_group'>
                         {
@@ -86,7 +92,7 @@ const Footer = () => {
                         }
                     </ListGroup>
                 </Col>
-                <Col lg="2" md="3" sm="6" className='mb-4'>
+                <Col lg="3" md="4" sm="6" className='foot_refs mb-4'>
                     <h5>Ressources</h5>
                     <ListGroup className='list_group'>
                         {
@@ -98,7 +104,7 @@ const Footer = () => {
                         }
                     </ListGroup>
                 </Col>
-                <Col lg="2" md="3" sm="6" className='mb-4'>
+                <Col lg="3" md="4" sm="6" className='foot_refs mb-4'>
                     <h5>Entreprise</h5>
                     <ListGroup className='list_group'>
                         {
@@ -110,7 +116,7 @@ const Footer = () => {
                         }
                     </ListGroup>
                 </Col>
-                <Col lg="3" md="6" sm="6" className='mb-4'>
+                <Col lg="3" md="4" sm="6" className='foot_refs mb-4'>
                     <h5>Newsletter</h5>
                     <input type="text" className="newsletter" placeholder='Email' />
                     <div className="social_links d-flex gap-3 align-items-center">

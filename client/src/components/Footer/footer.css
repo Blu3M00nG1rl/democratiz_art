@@ -7,9 +7,30 @@
     padding-bottom: 30px;
 }
 
+.foot_tb .btn {
+    padding: 7px 25px;
+    border: 1px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+    margin: auto;
+}
 
-.logo img {
-    width: 50px;
+.foot_tb .btn a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.foot_tb .btn span i {
+    color: #fff;
+}
+
+.foot_tb .btn:hover {
+    background: linear-gradient(90deg, rgb(0, 180, 237) -2.21%, rgb(0, 203, 130) 100%);
+}
+
+.foot_refs {
+    margin-top: 50px !important;
 }
 
 .list_item {

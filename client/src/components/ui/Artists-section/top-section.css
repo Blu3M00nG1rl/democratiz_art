@@ -1,22 +1,22 @@
-.hero_section {
+.top_section {
     padding-top: 120px;
     background: #f2f1f8;
 }
 
-.hero_content h2 {
+.top_content h2 {
     line-height: 55px;
     font-size: 2.5rem;
 }
 
-.hero_content h2 span {
+.top_content h2 span {
     color: #151964;
 }
 
-.hero_btns {
+.top_btns {
     margin-top: 40px;
 }
 
-.explore_btn {
+.join_btn {
     border: none;
     outline: none;
     padding: 7px 25px !important;
@@ -26,25 +26,23 @@
     background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
 }
 
-.explore_btn i {
+.join_btn i,
+.create_btn i {
     color: #fff;
     font-size: 1rem;
 }
 
-.explore_btn a {
+.join_btn a,
+.create_btn a {
     text-decoration: none;
     color: #fff;
 }
 
-.explore_btn:hover {
-    background: linear-gradient(90deg, rgb(0, 180, 237) -2.21%, rgb(0, 203, 130) 100%);
-}
-
-.hero_img {
+.top_img {
     margin-left: auto;
 }
 
-.hero_img img {
+.top_img img {
     border-radius: 7px;
 }
 
@@ -55,37 +53,37 @@
 
 
 @media only screen and (max-width:992px) {
-    .hero_img {
+    .top_img {
         width: 300px;
     }
 
-    .hero_section {
+    .top_section {
         margin-top: 90px;
     }
 
-    .hero_content h2 {
+    .top_content h2 {
         font-size: 1.5rem;
         line-height: 40px;
     }
 
-    .hero_content p {
+    .top_content p {
         font-size: 0.8rem;
         line-height: 25px;
     }
 
 
-    .explore_btn {
+    .join_btn {
         padding: 4px 25px !important;
 
     }
 
-    .explore_btn a {
+    .join_btn a {
         font-size: 0.7rem;
     }
 }
 
 @media only screen and (max-width:576px) {
-    .hero_img {
+    .top_img {
         width: 100%;
         margin: auto;
         margin-top: 50px;

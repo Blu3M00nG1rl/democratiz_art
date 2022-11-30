@@ -13,7 +13,7 @@ const NAV_LINKS = [
     },
     {
         display: 'Artistes',
-        url: '/artist'
+        url: '/artists'
     },
     {
         display: 'Profil',

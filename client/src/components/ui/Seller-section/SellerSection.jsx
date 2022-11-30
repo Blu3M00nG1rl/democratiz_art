@@ -9,13 +9,13 @@ const SellerSection = () => {
             <Row>
                 <Col lg='12' className='mb-5'>
                     <div className="seller_section-title">
-                        <h3>Top Artistes</h3>
+                        <h3>Nos Artistes Ambassadeurs</h3>
                     </div>
                 </Col>
 
                 {
-                    SELLER_DATA.map((item) => (
-                        <Col lg='2' md='3' sm='4' xs='6' key={item.id} className='mb-4'>
+                    SELLER_DATA.slice(0, 4).map((item) => (
+                        <Col lg='3' md='4' sm='4' xs='6' key={item.id} className='mb-4'>
                             <div className="single_seller-card">
                                 <div className="seller_img">
                                     <img src={item.sellerImg} alt="" className='w-100' />

@@ -16,7 +16,7 @@ const liveSell = () => {
                 <Col lg="12" className='mb-5'>
                     <div className="live_auction_top d-flex align-items-center justify-content-between">
                         <h3>Ventes en Cours</h3>
-                        <span><Link to="/market">Voir toutes les collections</Link></span>
+                        <span><Link to="/market">Voir toutes les oeuvres en vente</Link></span>
                     </div>
                 </Col>
 

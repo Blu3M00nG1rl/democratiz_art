@@ -20,7 +20,6 @@
 }
 
 
-
 .single_nft-more span i {
     padding: 5px;
     background: #fff;
@@ -61,7 +60,6 @@
     border: none;
     outline: none;
     border-radius: 50px;
-
     transition: 0.3s;
     display: flex;
     align-items: center;
@@ -75,18 +73,36 @@
 }
 
 .singleNft-btn:hover {
-    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
-}
-
-.singleNft-btn:hover a {
-    color: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+    background: linear-gradient(90deg, rgb(0, 180, 237) -2.21%, rgb(0, 203, 130) 100%);
 }
 
 .singleNft-btn i {
     color: #fff;
 }
 
-.singleNft-btn i:hover {
-    color: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+@media only screen and (max-width:992px) {
 
+    .single_nft_content h2 {
+        font-size: 1.3rem;
+    }
+
+    .single_nft_content p {
+        font-size: 0.8rem;
+        line-height: 28px;
+    }
+
+    .nft_creator {
+        width: 100%;
+    }
+
+    .singleNft-btn a {
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (max-width:576px) {
+
+    .single_nft_content h2 {
+        margin-top: 15px;
+    }
 }
