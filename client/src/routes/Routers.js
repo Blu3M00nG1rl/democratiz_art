@@ -6,6 +6,7 @@ import Contact from "../pages/Contact";
 import NftDetails from '../pages/NftDetails';
 import Artists from '../pages/Artists';
 import Profil from '../pages/Profil';
+import Test from '../pages/Tests';
 
 const routers = () => {
     return (
@@ -17,6 +18,7 @@ const routers = () => {
             <Route path='/artists' element={<Artists />} />
             <Route path='/profil' element={<Profil />} />
             <Route path='/market/:id' element={<NftDetails />} />
+            <Route path='/test' element={<Test />} />
         </Routes>
     );
 };

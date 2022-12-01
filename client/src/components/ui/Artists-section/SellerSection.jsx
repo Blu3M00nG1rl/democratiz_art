@@ -1,5 +1,5 @@
 import React from 'react';
-import './seller.css';
+import './seller-section.css';
 import { Container, Row, Col } from 'reactstrap'
 import { SELLER_DATA } from '../../../assets/data/data';
 

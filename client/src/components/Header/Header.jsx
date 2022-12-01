@@ -3,8 +3,8 @@ import './header.css';
 import { Container } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
 import logoImg from '../../assets/images/portrait.png';
-
-
+import profileImg from '../../assets/images/profile.png';
+//import { useState } from 'react';
 
 const NAV_LINKS = [
     {
@@ -14,10 +14,6 @@ const NAV_LINKS = [
     {
         display: 'Artistes',
         url: '/artists'
-    },
-    {
-        display: 'Profil',
-        url: '/profil'
     }
 ]
 
@@ -26,6 +22,8 @@ const Header = () => {
     const headerRef = useRef(null);
 
     const menuRef = useRef(null);
+
+    //const [profile, setProfile] = useState(false);
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -71,12 +69,19 @@ const Header = () => {
                     </div>
 
                     <div className="nav_right d-flex align-items-center gap-5 ">
+                        <div className='profile_box'>
+                            <div className='profile'>
+                                <Link to="/profil" className='profile'>
+                                    <img src={profileImg} alt="profile" />
+                                </Link>
+                            </div>
+                        </div>
+
                         <button className='btn d-flex gap-2 align-items-center'>
                             <span>
                                 <i className="ri-wallet-line"></i>
                             </span>
                             <Link to='/#'>
-
                                 Connexion Wallet
                             </Link>
                         </button>

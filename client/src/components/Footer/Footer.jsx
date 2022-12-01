@@ -66,7 +66,7 @@ const Footer = () => {
             <Row>
                 <Col lg="12" md="12" sm="12" className='foot_tb mb-4 text-center'>
                     <h2>
-                        VOUS ÊTES UN ARTISTES ?  REJOIGNEZ NOTRE COMMUNAUTÉ
+                        VOUS ÊTES UN ARTISTE ?  REJOIGNEZ NOTRE COMMUNAUTÉ
                     </h2>
                     <p>DEMOCRATIZ_ART est une plateforme ouverte à tous les artistes plasticiens professionnels ou en devenir.
                         Nous vous aidons à digitaliser et fractionner vos oeuvres physiques pour les rendre accessibles à tous. Nous les mettons en vente sous forme de NFT ouvrant des bénéfices uniques à leurs acquéreurs.
@@ -75,7 +75,7 @@ const Footer = () => {
                         <span>
                             <i className="ri-global-line"></i>
                         </span>
-                        <Link to='/#' class>
+                        <Link to='/#'>
                             Rejoignez Nous
                         </Link>
                     </button>

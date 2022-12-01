@@ -16,7 +16,11 @@ contract DemocratizArt is ERC721URIStorage {
 
     address payable owner;
 
-    mapping(uint256 => MarketItem) private idMarketItem;
+    mapping(address => bool) private admins;
+
+    mapping(address => bool) private artists;
+
+    mapping(uint256 => MarketItem) private idToMarketItem;
 
     struct MarketItem {
         uint256 tokenId;
@@ -26,7 +30,11 @@ contract DemocratizArt is ERC721URIStorage {
         bool sold;
     }
 
-    event idMarketItemCreated(
+    event AdminRegistered(address _address);
+
+    event ArtistRegistered(address _address);
+
+    event idToMarketItemCreated(
         uint256 indexed tokenId,
         address seller,
         address owner,
@@ -34,32 +42,55 @@ contract DemocratizArt is ERC721URIStorage {
         bool sold
     );
 
-    modifier onlyOwner() {
-        require(
-            msg.sender == owner,
-            unicode"vous n'êtes pas autorisé à faire cette action."
-        );
-        _;
-    }
-
     constructor() ERC721("NFT Democratiz_Art", "DANFT") {
         owner == payable(msg.sender);
     }
 
+    /// @dev manage artists and admin access
+    function registerAdmin(address _address) public {
+        require(
+            owner == msg.sender,
+            unicode"Vous n'êtes pas le propriétaire du contrat."
+        );
+        require(!admins[_address], unicode"Cette personne est déjà admin.");
+        admins[_address] = true;
+        emit AdminRegistered(_address);
+    }
+
+    modifier onlyAdmin() {
+        require(admins[msg.sender], unicode"Vous n'êtes pas administrateur");
+        _;
+    }
+
+    function registerArtist(address _address) public onlyAdmin {
+        require(!artists[_address], unicode"Artiste déjà enregistré.");
+        artists[_address] = true;
+        emit ArtistRegistered(_address);
+    }
+
+    modifier onlyArtist() {
+        require(
+            artists[msg.sender],
+            unicode"Vous n'êtes pas inscrit en tant qu'artiste."
+        );
+        _;
+    }
+
     /// @dev Charge money for Democratiz_Art
-    function updateListingPrice(uint256 _listingPrice)
-        public
-        payable
-        onlyOwner
-    {
+    function updateListingPrice(uint256 _listingPrice) public payable {
+        require(
+            owner == msg.sender,
+            unicode"Seul le propriétaire de la marketplace peut changer le prix."
+        );
         listingPrice = _listingPrice;
     }
 
+    /// @dev Return listing price of the contract
     function getListingPrice() public view returns (uint256) {
         return listingPrice;
     }
 
-    /// @dev Create NFT
+    /// @dev Create NFT and list on the marketplace
     function createToken(string memory tokenURI, uint256 price)
         public
         payable
@@ -85,7 +116,7 @@ contract DemocratizArt is ERC721URIStorage {
             unicode"Le prix doit être supérieur à la commission de la plateforme."
         );
 
-        idMarketItem[tokenId] = MarketItem(
+        idToMarketItem[tokenId] = MarketItem(
             tokenId,
             payable(msg.sender),
             payable(address(this)),
@@ -93,10 +124,10 @@ contract DemocratizArt is ERC721URIStorage {
             false
         );
 
-        /// @dev transfer vers le contrat
+        /// @dev transfer to contract
         _transfer(msg.sender, address(this), tokenId);
 
-        emit idMarketItemCreated(
+        emit idToMarketItemCreated(
             tokenId,
             msg.sender,
             address(this),
@@ -105,10 +136,10 @@ contract DemocratizArt is ERC721URIStorage {
         );
     }
 
-    /// @dev Resale token
+    /// @dev allows a purchase token to be resale
     function reSellToken(uint256 tokenId, uint256 price) public payable {
         require(
-            idMarketItem[tokenId].owner == msg.sender,
+            idToMarketItem[tokenId].owner == msg.sender,
             unicode"Vous n'êtes pas le propriétaire de ce token"
         );
 
@@ -117,35 +148,35 @@ contract DemocratizArt is ERC721URIStorage {
             unicode"Le prix doit être égal au prix défini"
         );
 
-        idMarketItem[tokenId].sold = false;
-        idMarketItem[tokenId].price = price;
-        idMarketItem[tokenId].seller = payable(msg.sender);
-        idMarketItem[tokenId].owner = payable(address(this));
+        idToMarketItem[tokenId].sold = false;
+        idToMarketItem[tokenId].price = price;
+        idToMarketItem[tokenId].seller = payable(msg.sender);
+        idToMarketItem[tokenId].owner = payable(address(this));
 
         _itemsSold.decrement();
 
         _transfer(msg.sender, address(this), tokenId);
     }
 
-    /// @dev Create Item Market Sale
+    /// @dev Create Item Market Sale and transfer ownership and funds
     function createMarketSale(uint256 tokenId) public payable {
-        uint256 price = idMarketItem[tokenId].price;
+        uint256 price = idToMarketItem[tokenId].price;
 
         require(
             msg.value == price,
             unicode"Merci d'indiquer le prix demandé pour finaliser l'achat"
         );
 
-        idMarketItem[tokenId].seller = payable(msg.sender);
-        idMarketItem[tokenId].sold = true;
-        idMarketItem[tokenId].owner = payable(address(0));
+        idToMarketItem[tokenId].owner = payable(msg.sender);
+        idToMarketItem[tokenId].sold = true;
+        idToMarketItem[tokenId].seller = payable(address(0));
 
         _itemsSold.increment();
 
         _transfer(address(this), msg.sender, tokenId);
 
         payable(owner).transfer(listingPrice);
-        payable(idMarketItem[tokenId].seller).transfer(msg.value);
+        payable(idToMarketItem[tokenId].seller).transfer(msg.value);
     }
 
     /// @dev Get Unsold NFT Data
@@ -156,10 +187,10 @@ contract DemocratizArt is ERC721URIStorage {
 
         MarketItem[] memory items = new MarketItem[](unsoldItemCount);
         for (uint256 i = 0; i < itemCount; i++) {
-            if (idMarketItem[i + 1].owner == address(this)) {
+            if (idToMarketItem[i + 1].owner == address(this)) {
                 uint256 currentId = i + 1;
 
-                MarketItem storage currentItem = idMarketItem[currentId];
+                MarketItem storage currentItem = idToMarketItem[currentId];
                 items[currentIndex] = currentItem;
                 currentIndex += 1;
             }
@@ -167,23 +198,47 @@ contract DemocratizArt is ERC721URIStorage {
         return items;
     }
 
-    /// @dev Purchase Item
+    /// @dev Get only the NFTs of the user
     function fetchMyNFT() public view returns (MarketItem[] memory) {
         uint256 totalCount = _tokenIds.current();
         uint256 itemCount = 0;
         uint256 currentIndex = 0;
 
         for (uint256 i = 0; i < totalCount; i++) {
-            if (idMarketItem[i + 1].owner == msg.sender) {
+            if (idToMarketItem[i + 1].owner == msg.sender) {
                 itemCount = i + 1;
             }
         }
 
         MarketItem[] memory items = new MarketItem[](itemCount);
         for (uint256 i = 0; i < totalCount; i++) {
-            if (idMarketItem[i + 1].owner == msg.sender) {
+            if (idToMarketItem[i + 1].owner == msg.sender) {
                 uint256 currentId = i + 1;
-                MarketItem storage currentItem = idMarketItem[currentId];
+                MarketItem storage currentItem = idToMarketItem[currentId];
+                items[currentIndex] = currentItem;
+                currentIndex += 1;
+            }
+        }
+        return items;
+    }
+
+    /// @dev Returns item listed by user
+    function fetchItemsListed() public view returns (MarketItem[] memory) {
+        uint256 totalCount = _tokenIds.current();
+        uint256 itemCount = 0;
+        uint256 currentIndex = 0;
+
+        for (uint256 i = 0; i < totalCount; i++) {
+            if (idToMarketItem[i + 1].seller == msg.sender) {
+                itemCount = i + 1;
+            }
+        }
+
+        MarketItem[] memory items = new MarketItem[](itemCount);
+        for (uint256 i = 0; i < totalCount; i++) {
+            if (idToMarketItem[i + 1].seller == msg.sender) {
+                uint256 currentId = i + 1;
+                MarketItem storage currentItem = idToMarketItem[currentId];
                 items[currentIndex] = currentItem;
                 currentIndex += 1;
             }

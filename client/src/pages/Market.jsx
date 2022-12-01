@@ -4,11 +4,11 @@ import CommonSection from '../components/ui/Common-section/CommonSection';
 import NftCard from '../components/ui/Nft-card/NftCard';
 import { NFT_DATA } from '../assets/data/data.js';
 import '../styles/market.css';
-import { useState } from 'react';
+//import { useState } from 'react';
 
 const Market = () => {
 
-    const [data, setData] = useState(NFT_DATA);
+    //const [data, setData] = useState(NFT_DATA);
 
     const handleCategory = () => { };
 

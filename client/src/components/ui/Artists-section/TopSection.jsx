@@ -19,7 +19,7 @@ const topSection = () => {
                                 <span>
                                     <i className="ri-global-line"></i>
                                 </span>
-                                <Link to='/#' class>
+                                <Link to='/#'>
                                     Rejoignez Nous
                                 </Link>
                             </button>     </div>
