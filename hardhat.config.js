@@ -26,9 +26,7 @@ module.exports = {
     },
     mumbai: {
       url: `https://polygon-mumbai.g.alchemy.com/v2/${process.env.ALCHEMY_API_MUMBAI_ID}`,
-      accounts: [`0x` + process.env.PRIVATE_KEY],
-      gasPrice: 35000000000,
-      saveDeployments: true,
+      accounts: [`0x` + process.env.PRIVATE_KEY]
     }
   },
   solidity: "0.8.17",

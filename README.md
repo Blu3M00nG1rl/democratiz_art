@@ -14,7 +14,7 @@ democratiz_art deployed to: 0x9253A9384B7e46F2350c3518217de4691414AF33
 
 # Goerli
    $ npx hardhat run scripts/deploy.js --network goerli
-democratiz_art deployed to: 0x273db1ABa2D5aB3D0c08D1D5121819d32f8dED47
+democratiz_art deployed to: 0x54C8FF4Ec74eEd4baB9B933F76099C210EB698a5
 
 # 
 16:04
