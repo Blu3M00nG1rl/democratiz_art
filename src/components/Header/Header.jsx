@@ -29,6 +29,9 @@ function Header() {
     const [currentAccount, setCurrentAccount] = useState("");
     const [accountBalance, setAccountBalance] = useState("");
 
+    function reload() {
+        window.location.reload();
+    }
 
     //Vérifie si le wallet est connecté
     async function checkIfWalletConnected() {
@@ -42,7 +45,7 @@ function Header() {
 
             if (accounts.length) {
                 setCurrentAccount(accounts[0]);
-                setError("compte : " + accounts[0]);
+                console.log("compte connecté : " + accounts[0]);
             } else {
                 setError("Aucun compte trouvé");
                 setError(true);
@@ -91,10 +94,15 @@ function Header() {
 
     //Surveille le changement de compte metamask
     useEffect(() => {
-        ethereum?.on("accountsChanged", checkIfWalletConnected);
+        ethereum?.on("accountsChanged", reload);
         return () => {
-            ethereum?.removeListener("accountsChanged", checkIfWalletConnected);
+            ethereum?.removeListener("accountsChanged", reload);
         };
+    });
+
+    //Surveille si le wallet est connecté
+    useEffect(() => {
+        checkIfWalletConnected();
     });
 
     //Gestion de la scrollbar
@@ -168,8 +176,8 @@ function Header() {
                             <i className="ri-menu-line" onClick={toggleMenu}></i>
                         </span>
                     </div>
+                    {error}
                 </div>
-                {error}
             </Container>
         </header >
     );
