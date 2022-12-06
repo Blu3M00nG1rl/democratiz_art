@@ -6,5 +6,5 @@ import Democratiz_Art from "../artifacts/contracts/Democratiz_Art.sol/Democratiz
 
 //Democratiz_Art
 export const Democratiz_ArtAddress =
-    "0x8c65065F063103277782Add6E0CA04196d86408b";
+    "0x9253A9384B7e46F2350c3518217de4691414AF33";
 export const Democratiz_ArtABI = Democratiz_Art.abi;
