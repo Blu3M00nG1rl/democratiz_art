@@ -1,0 +1,31 @@
+input {
+    border-radius: 50px;
+    color: rgb(59, 67, 70);
+    padding: 7px 25px;
+    border: none;
+    width: 35% !important;
+}
+
+.table {
+    width: 35% !important;
+    margin: 20px auto;
+    display: inline-block;
+    vertical-align: middle !important;
+    float: none;
+}
+
+.nouveau {
+    color: green;
+}
+
+.btn_ajout {
+    padding: 7px 25px;
+    border: 1px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+    color: #fff
+}
+
+.btn_ajout:hover {
+    background: linear-gradient(90deg, rgb(0, 180, 237) -2.21%, rgb(0, 203, 130) 100%);
+}

@@ -1,0 +1,49 @@
+.form_input input,
+.form_input textarea {
+    width: 100%;
+    padding: 7px 25px;
+    font-size: 0.8rem;
+    background: transparent;
+    border: 1px solid #ddd;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form_input {
+    margin-bottom: 15px;
+}
+
+.form_input label {
+    margin-bottom: 10px;
+}
+
+.form_input .upload_input {
+    padding: 40px 25px;
+}
+
+.upload_btn {
+    border: none;
+    outline: none;
+    padding: 7px 25px !important;
+    border-radius: 50px !important;
+    border: 1px !important;
+    font-size: 0.9rem;
+    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+    color: #fff;
+}
+
+.upload_btn i {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.upload_btn:hover {
+    background: linear-gradient(90deg, rgb(0, 180, 237) -2.21%, rgb(0, 203, 130) 100%);
+}
+
+@media only screen and (max-width:576px) {
+    .create_item {
+        margin-top: 15px;
+    }
+}

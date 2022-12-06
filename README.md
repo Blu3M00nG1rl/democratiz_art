@@ -1,7 +1,20 @@
 # Democratiz Art Dapp
-
 Investing in Real World Art with Fractional NFTs Dapp
 
-## Config Technique
+# Config Technique
+Créé avec Hardhat et Ethers
 
-Créé avec Truffle React
+# Localhost
+   $ npx hardhat run scripts/deploy.js
+democratiz_art deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+
+# Mumbai
+   $ npx hardhat run scripts/deploy.js --network mumbai
+democratiz_art deployed to: 0x3323d5c47B96d8f563B0085A47e2640adbd14C3B
+
+# Goerli
+   $ npx hardhat run scripts/deploy.js --network goerli
+democratiz_art deployed to: 0x273db1ABa2D5aB3D0c08D1D5121819d32f8dED47
+
+# 
+16:04
