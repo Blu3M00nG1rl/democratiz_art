@@ -23,28 +23,12 @@ function Header() {
     const menuRef = useRef(null);
     const toggleMenu = () => menuRef.current.classList.toggle('active_menu');
 
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const { provider: ethereum } = provider;
     const [error, setError] = useState('');
     const [currentAccount, setCurrentAccount] = useState("");
     const [accountBalance, setAccountBalance] = useState("");
 
-    //Gestion de la scrollbar
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                headerRef.current.classList.add('header_shrink');
-            }
-            else {
-                headerRef.current.classList.remove('header_shrink');
-            }
-        })
-        return () => {
-            window.removeEventListener('scroll')
-        }
-    }, [])
-
-    useEffect(() => {
-        checkIfWalletConnected();
-    }, []);
 
     //Vérifie si le wallet est connecté
     async function checkIfWalletConnected() {
@@ -58,16 +42,21 @@ function Header() {
 
             if (accounts.length) {
                 setCurrentAccount(accounts[0]);
-                console.log(accounts[0]);
+                setError("compte : " + accounts[0]);
             } else {
                 setError("Aucun compte trouvé");
                 setError(true);
             }
-
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const getBalance = await provider.getBalance(accounts[0]);
             const bal = ethers.utils.formatEther(getBalance);
-            setAccountBalance(bal);
+            //Affichage à deux décimales
+            if (bal.includes('.')) {
+                const parts = bal.split('.');
+                setAccountBalance(parts[0] + '.' + parts[1].slice(0, 2));
+            } else {
+                setAccountBalance(bal);
+            }
         } catch (error) {
             setError("Erreur de connexion au wallet");
             setError(true);
@@ -84,12 +73,44 @@ function Header() {
                 method: "eth_requestAccounts",
             });
             setCurrentAccount(accounts[0]);
-            // window.location.reload();
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const getBalance = await provider.getBalance(accounts[0]);
+            const bal = ethers.utils.formatEther(getBalance);
+            //Affichage à deux décimales
+            if (bal.includes('.')) {
+                const parts = bal.split('.');
+                setAccountBalance(parts[0] + '.' + parts[1].slice(0, 2));
+            } else {
+                setAccountBalance(bal);
+            }
         } catch (error) {
             setError("Erreur de Connexion au Wallet");
             setError(true);
         }
     };
+
+    //Surveille le changement de compte metamask
+    useEffect(() => {
+        ethereum?.on("accountsChanged", checkIfWalletConnected);
+        return () => {
+            ethereum?.removeListener("accountsChanged", checkIfWalletConnected);
+        };
+    });
+
+    //Gestion de la scrollbar
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                headerRef.current.classList.add('header_shrink');
+            }
+            else {
+                headerRef.current.classList.remove('header_shrink');
+            }
+        })
+        return () => {
+            window.removeEventListener('scroll')
+        }
+    }, [])
 
     return (
         <header className="header" ref={headerRef}>
@@ -139,7 +160,7 @@ function Header() {
                                     </div>
                                     <div className='profile_box d-flex gap-2 align-items-center'>
                                         <i className="ri-wallet-line"></i>
-                                        {currentAccount}
+                                        {currentAccount + " (Balance : " + accountBalance + " MATIC)"}
                                     </div>
                                 </div>}
 
@@ -148,6 +169,7 @@ function Header() {
                         </span>
                     </div>
                 </div>
+                {error}
             </Container>
         </header >
     );
