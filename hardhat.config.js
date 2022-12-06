@@ -21,7 +21,7 @@ module.exports = {
       url: "http://127.0.0.1:8545"
     },
     goerli: {
-      url: `https://goerli.infura.io/v3/${process.env.ALCHEMY_API_GOERLI_ID}`,
+      url: `https://eth-goerli.g.alchemy.com/v2/${process.env.ALCHEMY_API_GOERLI_ID}`,
       accounts: [`0x` + process.env.PRIVATE_KEY]
     },
     mumbai: {

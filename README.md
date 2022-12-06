@@ -10,7 +10,7 @@ democratiz_art deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
 
 # Mumbai
    $ npx hardhat run scripts/deploy.js --network mumbai
-democratiz_art deployed to: 0x3323d5c47B96d8f563B0085A47e2640adbd14C3B
+democratiz_art deployed to: 0x9253A9384B7e46F2350c3518217de4691414AF33
 
 # Goerli
    $ npx hardhat run scripts/deploy.js --network goerli
