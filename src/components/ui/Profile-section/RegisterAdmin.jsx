@@ -57,7 +57,7 @@ const RegisterAdmin = () => {
                             <p>Liste blanche des administrateurs identifiés par leur adresse Ethereum.</p>
                         </div>
                         <div className="btns d-flex align-items-center gap-4">
-                            <input onChange={e => setAdminAddress(e.target.value)} placeholder="Admin Address" />
+                            <input className="input_zone" onChange={e => setAdminAddress(e.target.value)} placeholder="Admin Address" />
                             <button onClick={setAdmin} className='btn_ajout d-flex align-items-center gap-2'><i className="ri-ball-pen-line"></i>Autoriser</button>
                         </div>
                         <div className="content_data">

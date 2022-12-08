@@ -17,8 +17,8 @@ const routers = () => {
             <Route path='/contact' element={<Contact />} />
             <Route path='/artists' element={<Artists />} />
             <Route path='/profile' element={<Profile />} />
-            <Route path='/market/:id' element={<NftDetails />} />
             <Route path='/test' element={<Test />} />
+            <Route path='/market/:id' element={<NftDetails />} />
         </Routes>
     );
 };

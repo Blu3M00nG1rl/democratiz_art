@@ -4,7 +4,7 @@ import NftCard from '../Nft-card/NftCard';
 import { NFT_DATA } from '../../../assets/data/data.js';
 import './market-section.css';
 
-const MarketSection = () => {
+function MarketSection() {
 
     return <>
         <section>

@@ -1,7 +1,7 @@
 require('dotenv').config();
 require("@nomicfoundation/hardhat-chai-matchers");
 const fs = require('fs');
-
+require('dotenv').config();
 task("accounts", "Affiche la liste des comptes", async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners();
 

@@ -1,54 +1,40 @@
-import React, { useState, useEffect } from 'react'
-import { ethers } from 'ethers'
+// App.js
+import React, { useState, useEffect } from 'react';
+import './../../../App.css';
 
-const WalletCardEthers = () => {
-
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const { provider: ethereum } = provider;
-    const [currentAccount, setCurrentAccount] = useState("");
-
-
-    //Vérifie si le wallet est connecté
-    async function checkIfWalletConnected() {
-        try {
-            if (!window.ethereum)
-                return console.log("Installez MetaMask");
-
-            const accounts = await window.ethereum.request({
-                method: "eth_accounts",
-            });
-
-            if (accounts.length) {
-                setCurrentAccount(accounts[0]);
-                console.log("compte : " + accounts[0]);
-            } else {
-                console.log("Aucun compte trouvé");
-                console.log(true);
-            }
-
-
-        } catch (error) {
-            console.log("Erreur de connexion au wallet");
-        }
-    };
+function Test() {
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        ethereum?.on("accountsChanged", checkIfWalletConnected);
-        return () => {
-            ethereum?.removeListener("accountsChanged", checkIfWalletConnected);
+        const fetchData = async () => {
+            setIsLoading(true);
+            const res = await fetch(
+                'https://hn.algolia.com/api/v1/search?query=react',
+            );
+            const json = await res.json();
+            setData(json.hits);
+            setIsLoading(false);
         };
-    });
-
-
+        fetchData();
+    }, [setData]);
 
     return (
-        <div className='walletCard'>
-            <h4> Connection to MetaMask using ethers.js </h4>
-            <div className='accountDisplay'>
-                <h3>Address: {currentAccount}</h3>
-            </div>
-        </div>
+        <React.Fragment>
+            {isLoading ? (
+                <p>Loading ...</p>
+            ) : (
+                <ul>
+                    {data.map(item => (
+                        <li key={item.ObjectId}>
+                            <a href={item.url}>{item.title}</a>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </React.Fragment>
     );
 }
 
-export default WalletCardEthers;
+
+export default Test;

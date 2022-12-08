@@ -56,7 +56,7 @@ const RegisterArtists = () => {
                             <p>Liste blanche des artistes autorisés à utiliser la plateforme (identifiés par leur adresse Ethereum).</p>
                         </div>
                         <div className="btns d-flex align-items-center gap-4">
-                            <input onChange={e => setArtistAddress(e.target.value)} placeholder="Adresse de l'Artiste" />
+                            <input className="input_zone" onChange={e => setArtistAddress(e.target.value)} placeholder="Adresse de l'Artiste" />
                             <button onClick={setArtist} className='btn_ajout d-flex align-items-center gap-2'><i className="ri-ball-pen-line"></i>Autoriser</button>
                         </div>
                         <div className="content_data">

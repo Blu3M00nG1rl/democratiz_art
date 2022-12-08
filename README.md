@@ -6,7 +6,7 @@ Créé avec Hardhat et Ethers
 
 # Localhost
    $ npx hardhat run scripts/deploy.js
-democratiz_art deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+democratiz_art deployed to: 0x69F7eEB9ddE4A581CBF37b2A8570736EC8B7a3d5
 
 # Mumbai
    $ npx hardhat run scripts/deploy.js --network mumbai

@@ -6,6 +6,7 @@ import RegisterAdmin from '../components/ui/Profile-section/RegisterAdmin';
 import RegisterArtists from '../components/ui/Profile-section/RegisterArtists';
 import CreateNft from '../components/ui/Profile-section/CreateNft/CreateNft';
 
+
 function Profile() {
 
     const [statutProfile, setStatutProfile] = useState("Profil Utilisateur");

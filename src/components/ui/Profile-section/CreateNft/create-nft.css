@@ -1,3 +1,11 @@
+#nftForm {
+    background: #EFF0F2;
+    padding: 20px;
+    border-radius: 10px;
+    border: thick double #151964;
+    ;
+}
+
 .form_input input,
 .form_input textarea {
     width: 100%;
@@ -22,7 +30,7 @@
     padding: 40px 25px;
 }
 
-.upload_btn {
+.create_btn {
     border: none;
     outline: none;
     padding: 7px 25px !important;
@@ -31,15 +39,37 @@
     font-size: 0.9rem;
     background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
     color: #fff;
+    margin: 5px 5px 15px 0px;
 }
 
-.upload_btn i {
+.create_btn i {
     color: #fff;
     font-size: 1rem;
+    margin-right: 5px;
 }
 
-.upload_btn:hover {
+.create_btn:hover {
     background: linear-gradient(90deg, rgb(0, 180, 237) -2.21%, rgb(0, 203, 130) 100%);
+}
+
+.single_nft_card {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.nft_img img {
+    border-radius: 10px;
+    height: 270px;
+    width: 270px;
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.nft_img {
+    margin-bottom: 15px;
 }
 
 @media only screen and (max-width:576px) {
