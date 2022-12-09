@@ -7,7 +7,6 @@ import { ethers } from "ethers";
 import axios from "axios";
 import '../styles/nft-details.css';
 import creatorImg from '../assets/images/profile.png';
-import testImage from '../assets/nfts/img-01.jpg';
 
 function NftDetails(props) {
     const { tokenId } = useParams();
@@ -37,32 +36,6 @@ function NftDetails(props) {
         console.log(item);
     }, [tokenId]) // if tokenId changes, useEffect will run again
 
-    //BUY NFT
-    async function buyNFT(tokenId) {
-        try {
-            const contract = await connectingWithSmartContract();
-            const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
-            const transaction = await contract.createMarketSale(nft.tokenId, {
-                value: price,
-            });
-            await transaction.wait();
-        } catch (error) {
-            alert("Erreur de la transaction d'achat : ", error);
-        }
-    };
-
-    // CONNECTING WITH SMART CONTRACT
-    async function connectingWithSmartContract() {
-        try {
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
-            const signer = provider.getSigner();
-            const contract = fetchContract(signer);
-            return contract;
-        } catch (error) {
-            console.log("Erreur de connexion au contrat : ", error);
-        }
-    };
-
     useEffect(() => {
         getNFTData()
     }, [getNFTData])
@@ -74,7 +47,7 @@ function NftDetails(props) {
                 <Container>
                     <Row>
                         <Col lg='6' md='6' sm='6'>
-                            <img src={testImage}
+                            <img src={"https://gateway.pinata.cloud/ipfs/" + nft.image}
                                 alt=''
                                 className='w-100 single_nft-img'
                             />
@@ -115,9 +88,9 @@ function NftDetails(props) {
                                 </div>
 
                                 <p className='my-4'>{nft.description}</p>
-                                <button onClick={() => buyNFT(nft.tokenId)} className='singleNft-btn d-flex align-items-center gap-2 w-50'>
+                                <button className='singleNft-btn d-flex align-items-center gap-2 w-50'>
                                     <i className='ri-shopping-bag-line'></i>
-                                    <Link to=''>Acheter</Link>
+                                    <Link to='/wallet'>Acheter</Link>
                                 </button>
                             </div>
                         </Col>
