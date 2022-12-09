@@ -72,7 +72,7 @@ const Footer = () => {
                         Nous vous aidons à digitaliser et fractionner vos oeuvres physiques pour les rendre accessibles à tous. Nous les mettons en vente sous forme de NFT ouvrant des bénéfices uniques à leurs acquéreurs.
                     </p>
 
-                    <button onClick={() => window.location = 'https://docs.google.com/forms/d/e/1FAIpQLSehekEMHxtO1bsUW0zNlPjTwPavHqdXo9EDE_5hDowaAskslg/viewform'} className='join_btn d-flex gap-2 align-items-center'>
+                    <button onClick={() => window.location = 'https://docs.google.com/forms/d/e/1FAIpQLSehekEMHxtO1bsUW0zNlPjTwPavHqdXo9EDE_5hDowaAskslg/viewform'} className='btn d-flex gap-2 align-items-center'>
                         <i className="ri-registered-line"></i>Rejoignez Nous
                     </button>
 

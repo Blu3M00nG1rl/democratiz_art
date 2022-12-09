@@ -31,7 +31,7 @@
 .btn:hover {
     color: #303030;
     text-decoration: none;
-    border: 1px solid #303030;
+    border: 1px solid #303030 !important;
     cursor: pointer;
 }
 
