@@ -3,16 +3,16 @@ import './header.css';
 import { Container } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
 import { ethers } from 'ethers';
-import logoImg from '../../assets/images/portrait.png';
+import logoImg from '../../assets/images/logo.png';
 import profileImg from '../../assets/images/profile.png';
 
 const NAV_LINKS = [
     {
-        display: 'Explorer',
+        display: 'EXPLORER',
         url: '/market'
     },
     {
-        display: 'Artistes',
+        display: 'ARTISTES',
         url: '/artists'
     }
 ]
@@ -129,7 +129,7 @@ function Header() {
                             <span>
                                 <img src={logoImg} alt="" />
                             </span>
-                            <h2>DEMOCRATIZ_
+                            <h2 className='text_img'>EMOCRATIZ_
                                 <span>ART </span></h2>
                         </div></Link>
                     </div>
@@ -168,7 +168,7 @@ function Header() {
                                     </div>
                                     <div className='profile_box d-flex gap-2 align-items-center'>
                                         <i className="ri-wallet-line"></i>
-                                        {currentAccount + " (Balance : " + accountBalance + " MATIC)"}
+                                        {currentAccount.substring(0, 6) + "......" + currentAccount.substring(currentAccount.length - 6) + " (" + accountBalance + " MATIC)"}
                                     </div>
                                 </div>}
 

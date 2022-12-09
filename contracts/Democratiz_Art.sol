@@ -190,7 +190,7 @@ contract Democratiz_Art is ERC721URIStorage, Ownable {
         payable(idToMarketItem[tokenId].seller).transfer(msg.value);
     }
 
-    /// @dev Get Unsold NFT Data
+    /// @dev Get Unsold NFT Datas
     function fetchMarketItem() public view returns (MarketItem[] memory) {
         uint256 itemCount = _tokenIds.current();
         uint256 unsoldItemCount = _tokenIds.current() - _itemsSold.current();
@@ -255,5 +255,14 @@ contract Democratiz_Art is ERC721URIStorage, Ownable {
             }
         }
         return items;
+    }
+
+    /// @dev GetNft by his TokenId
+    function getListedTokenForId(uint256 tokenId)
+        public
+        view
+        returns (MarketItem memory)
+    {
+        return idToMarketItem[tokenId];
     }
 }

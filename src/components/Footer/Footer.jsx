@@ -81,7 +81,7 @@ const Footer = () => {
                     </button>
                 </Col>
                 <Col lg="3" md="4" sm="6" className='foot_refs mb-4'>
-                    <h5>Mon Compte</h5>
+                    <h5>MON COMPTE</h5>
                     <ListGroup className='list_group'>
                         {
                             MY_ACCOUNT.map((item, index) => (
@@ -93,7 +93,7 @@ const Footer = () => {
                     </ListGroup>
                 </Col>
                 <Col lg="3" md="4" sm="6" className='foot_refs mb-4'>
-                    <h5>Ressources</h5>
+                    <h5>RESSOURCES</h5>
                     <ListGroup className='list_group'>
                         {
                             RESOURCES.map((item, index) => (
@@ -105,7 +105,7 @@ const Footer = () => {
                     </ListGroup>
                 </Col>
                 <Col lg="3" md="4" sm="6" className='foot_refs mb-4'>
-                    <h5>Entreprise</h5>
+                    <h5>ENTREPRISE</h5>
                     <ListGroup className='list_group'>
                         {
                             COMPANY.map((item, index) => (
@@ -117,7 +117,7 @@ const Footer = () => {
                     </ListGroup>
                 </Col>
                 <Col lg="3" md="4" sm="6" className='foot_refs mb-4'>
-                    <h5>Newsletter</h5>
+                    <h5>NEWSLETTER</h5>
                     <input type="text" className="newsletter" placeholder='Email' />
                     <div className="social_links d-flex gap-3 align-items-center">
                         <span><Link to='#'><i className="ri-facebook-line"></i></Link></span>

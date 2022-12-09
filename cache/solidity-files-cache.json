@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/contracts/Democratiz_Art.sol": {
-      "lastModificationDate": 1670416696067,
-      "contentHash": "b303faa2accb58360861b02427a8b414",
+      "lastModificationDate": 1670586575721,
+      "contentHash": "df75435b560363aec50592322271b792",
       "sourceName": "contracts/Democratiz_Art.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -75,6 +75,41 @@
       ],
       "artifacts": [
         "console"
+      ]
+    },
+    "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/utils/Counters.sol": {
+      "lastModificationDate": 1670416629897,
+      "contentHash": "74654e3ae5d7f39555055dfe244dab7a",
+      "sourceName": "@openzeppelin/contracts/utils/Counters.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Counters"
       ]
     },
     "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
@@ -155,41 +190,6 @@
       ],
       "artifacts": [
         "ERC721"
-      ]
-    },
-    "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/utils/Counters.sol": {
-      "lastModificationDate": 1670416629897,
-      "contentHash": "74654e3ae5d7f39555055dfe244dab7a",
-      "sourceName": "@openzeppelin/contracts/utils/Counters.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Counters"
       ]
     },
     "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol": {

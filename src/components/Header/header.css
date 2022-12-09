@@ -6,16 +6,15 @@
     top: 0;
     left: 0;
     z-index: 1111111;
-    background: #ffffff;
 }
 
 .header_shrink {
     background: #ffffff;
-    box-shadow: 2px 2px 4px -2px #0EC0C8;
+    box-shadow: 2px 2px 4px -2px #ace0f9;
 }
 
 .logo h2 span {
-    color: #151964;
+    color: #303030;
 }
 
 .logo a {
@@ -24,6 +23,7 @@
 
 .logo img {
     width: 50px;
+    margin-bottom: 15px;
 }
 
 .navigation {
@@ -41,44 +41,54 @@
 
 .nav_item a {
     text-decoration: none;
-    color: #8B8B8B;
+    color: #303030;
+    padding: 7px 25px;
+    border: 1px;
+    border-radius: 50px;
+    background: #fff1eb;
 }
 
 .nav_item a:hover {
-    color: #0EC0C8;
+    color: #303030;
+    text-decoration: none;
+    border: 1px solid #303030;
 }
 
 .active {
-    color: #0EC0C8 !important;
+    color: #343444 !important;
+    background-image: linear-gradient(to top, #ace0f9 0%, #fff1eb 100%);
+    text-decoration: none;
 }
 
 .profile img {
     width: 40px;
     height: 40px;
+    margin-bottom: 15px;
 }
 
 .nav_right .btn {
     padding: 7px 25px;
     border: 1px;
     border-radius: 50px;
-    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
-    color: #fff;
+    background: #fff1eb;
+
 }
 
 .nav_right .btn a {
-    color: #fff;
+
     text-decoration: none;
     font-size: 0.8rem;
 }
 
-.nav_right .btn span i .wallet_zone {
-    color: #fff;
-}
 
 .nav_right .btn:hover {
-    background: linear-gradient(90deg, rgb(0, 180, 237) -2.21%, rgb(0, 203, 130) 100%);
+    color: #303030;
     text-decoration: none;
-    color: #fff;
+    border: 1px solid #303030;
+}
+
+.profile {
+    margin-left: 5px;
 }
 
 .profile_box {
@@ -98,7 +108,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(#14141f83, #14141f83);
+        background: linear-gradient(#303030, #303030);
         z-index: 222222;
         display: none;
     }

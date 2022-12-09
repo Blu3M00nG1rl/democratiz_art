@@ -1,13 +1,18 @@
 .all_category_filter select,
 .our_artists,
 .top_collection {
-    padding: 8px 25px;
-    font-size: 0.9rem;
+    padding: 10px 25px 5px 25px;
+    border: 1px;
+    border-radius: 50px;
+    background: #fff1eb;
+}
+
+.our_artists:hover,
+.top_collection:hover {
+    color: #303030;
+    text-decoration: none;
+    border: 1px solid #303030;
     cursor: pointer;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    background: #fff;
 }
 
 @media only screen and (max-width:768px) {

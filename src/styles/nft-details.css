@@ -56,7 +56,7 @@
 
 .singleNft-btn {
     padding: 8PX 25px;
-    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
     border: none;
     outline: none;
     border-radius: 50px;
@@ -68,16 +68,17 @@
 
 .singleNft-btn a {
     text-decoration: none;
-    color: #fff;
     font-size: 1rem;
 }
 
 .singleNft-btn:hover {
-    background: linear-gradient(90deg, rgb(0, 180, 237) -2.21%, rgb(0, 203, 130) 100%);
+    color: #303030;
+    text-decoration: none;
+    border: 1px solid #303030;
 }
 
 .singleNft-btn i {
-    color: #fff;
+    color: #303030;
 }
 
 @media only screen and (max-width:992px) {

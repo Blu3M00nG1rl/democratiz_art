@@ -1,32 +1,38 @@
 .footer h5 {
     font-size: 1.1rem;
-    color: #8B8B8B;
+    color: #303030;
 }
 
 .footer {
     padding-bottom: 30px;
 }
 
+.btn {
+    background: #fff1eb !important;
+}
+
 .foot_tb .btn {
     padding: 7px 25px;
     border: 1px;
     border-radius: 50px;
-    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
     margin: auto;
 }
 
 .foot_tb .btn a {
-    color: #fff;
+    color: #303030;
     text-decoration: none;
     font-size: 0.8rem;
 }
 
 .foot_tb .btn span i {
-    color: #fff;
+    color: #303030;
 }
 
-.foot_tb .btn:hover {
-    background: linear-gradient(90deg, rgb(0, 180, 237) -2.21%, rgb(0, 203, 130) 100%);
+.btn:hover {
+    color: #303030;
+    text-decoration: none;
+    border: 1px solid #303030;
+    cursor: pointer;
 }
 
 .foot_refs {
@@ -41,18 +47,18 @@
 
 .list_item a {
     text-decoration: none;
-    color: #8B8B8B;
+    color: #303030;
     font-size: 0.9rem;
 }
 
 .list_item a:hover {
-    color: #8B8B8B;
+    color: #ace0f9;
 }
 
 .newsletter {
     width: 100%;
     border-radius: 50px;
-    color: rgb(59, 67, 70);
+    color: #303030;
     padding: 7px 25px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -63,20 +69,20 @@
 }
 
 ::placeholder {
-    color: #8B8B8B;
+    color: #303030;
 
 }
 
 .social_links span a {
     text-decoration: none;
-    color: #151964;
+    color: #303030;
     font-size: 1.2rem;
     font-weight: 400;
     transition: 0.3s;
 }
 
 .social_links span a:hover {
-    color: #0EC0C8;
+    color: #ace0f9;
 }
 
 .copyright {

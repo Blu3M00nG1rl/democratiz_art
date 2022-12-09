@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import { Democratiz_ArtAddress, Democratiz_ArtABI } from '../context/constants.js';
-import CommonSection from '../components/ui/Common-section/CommonSection';
 import RegisterAdmin from '../components/ui/Profile-section/RegisterAdmin';
 import RegisterArtists from '../components/ui/Profile-section/RegisterArtists';
+import Visitor from '../components/ui/Profile-section/Visitor';
 import CreateNft from '../components/ui/Profile-section/CreateNft/CreateNft';
 
 
@@ -31,7 +31,7 @@ function Profile() {
                 const wallet = accounts[0].toLowerCase();
                 console.log("owner :" + owner);
                 if (owner === wallet) {
-                    setStatutProfile("Profil Super Administrateur");
+                    setStatutProfile("PROFIL SUPER ADMINISTRATEUR");
                     console.log("Owner : true");
                 } else { console.log("Owner : false"); }
                 let admin = contract.adminRegistered(accounts[0]);
@@ -39,7 +39,7 @@ function Profile() {
                     .then((data) => {
                         console.log("Admin : " + data);
                         if (data === true) {
-                            setStatutProfile("Profil Administrateur");
+                            setStatutProfile("PROFIL ADMINISTRATEUR");
                         }
                     })
                     .catch((err) => console.log("Erreur : " + err));
@@ -48,7 +48,7 @@ function Profile() {
                     .then((data) => {
                         console.log("Artiste : " + data);
                         if (data === true) {
-                            setStatutProfile("Profil Artiste");
+                            setStatutProfile("PROFIL ARTISTE");
                         }
                     })
                     .catch((err) => console.log("Erreur : " + err));
@@ -58,25 +58,28 @@ function Profile() {
 
     //Block affiché en fonction du profil
     function profileBlock() {
-        if (statutProfile === "Profil Artiste") {
+        if (statutProfile === "PROFIL ARTISTE") {
             return <>
                 <CreateNft />
             </>
         }
-        if (statutProfile === "Profil Administrateur") {
+        if (statutProfile === "PROFIL ADMINISTRATEUR") {
             return <>
                 <RegisterArtists />
             </>
         }
-        if (statutProfile === "Profil Super Administrateur") {
+        if (statutProfile === "PROFIL SUPER ADMINISTRATEUR") {
             return <>
                 <RegisterAdmin />
+            </>
+        } else {
+            return <>
+                <Visitor />
             </>
         }
     }
 
     return <>
-        <CommonSection title={statutProfile} />
         {profileBlock()}
     </>
 

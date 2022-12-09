@@ -11,8 +11,8 @@ const HeroSection = () => {
             <Row>
                 <Col lg='6' md='6'>
                     <div className="hero_content">
-                        <h2>Achetez des
-                            <span> NFTs </span>représentant des oeuvres physiques d’artistes contemporains.</h2>
+                        <h2>ACHETEZ DES
+                            <span> NFTs </span>REPRÉSENTANT DES ŒUVRES PHYSIQUES D’ARTISTES CONTEMPORAINS</h2>
                         <p>Soutenez des artistes contemporains en achetant des fractions de leurs oeuvres physiques via des NFTs.</p>
                         <p>Collectionnez les NFTs de vos artistes préférés.</p>
                         <button className='explore_btn d-flex align-items-center gap-2'><i className="ri-store-2-line"></i><Link to="/market">Market Place</Link></button>

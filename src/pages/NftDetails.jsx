@@ -3,7 +3,6 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 import { NFT_DATA } from '../assets/data/data';
-import CommonSection from '../components/ui/Common-section/CommonSection';
 import LiveSell from '../components/ui/Live-sell/LiveSell';
 
 
@@ -17,8 +16,6 @@ const NftDetails = () => {
 
     return (
         <>
-
-            <CommonSection title={singleNft.title} />
 
             <section className='nftDetails_section'>
                 <Container>

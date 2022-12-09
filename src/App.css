@@ -7,13 +7,13 @@
 }
 
 body {
-  background: #fcfdfe !important;
-  font-family: "Roboto", sans-serif;
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%) !important;
+  font-family: "Roboto MONO", sans-serif;
 }
 
 h1,
 h2 {
-  color: #5A5A5A;
+  color: #303030;
   font-weight: 500;
   font-size: 2rem;
 }
@@ -21,7 +21,7 @@ h2 {
 p {
   font-weight: 400;
   font-size: 1rem;
-  color: #5A5A5A;
+  color: #303030;
   line-height: 35px;
 }
 
@@ -46,9 +46,6 @@ footer {
   padding: 60px 0px;
 }
 
-section {
-  background: #f2f1f8;
-}
 
 
 
@@ -61,5 +58,5 @@ section {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 2em;
-  background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }

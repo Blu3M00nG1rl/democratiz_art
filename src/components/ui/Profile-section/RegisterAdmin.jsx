@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
-import { Democratiz_ArtAddress, Democratiz_ArtABI } from '../../../context/constants';
+import { fetchContract } from '../../../context/constants.js';
 import { Col, Container, Row, Table } from 'reactstrap';
-import './register.css';
+import './profile.css';
 
 
 const RegisterAdmin = () => {
@@ -24,7 +24,7 @@ const RegisterAdmin = () => {
             await requestAccount();
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
-            const contract = new ethers.Contract(Democratiz_ArtAddress, Democratiz_ArtABI, signer);
+            const contract = fetchContract(signer);
             await contract.registerAdmin(adminAddress);
             setAdminAddress('');
         }
@@ -34,7 +34,7 @@ const RegisterAdmin = () => {
         if (typeof window.ethereum !== 'undefined') {
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
-            const contract = new ethers.Contract(Democratiz_ArtAddress, Democratiz_ArtABI, signer);
+            const contract = fetchContract(signer);
             const filter = contract.filters.AdminRegistered(null);
             let allEvents = await contract.queryFilter(filter, 0, "latest");
             let listAdmins = [];
@@ -50,6 +50,9 @@ const RegisterAdmin = () => {
             <Container>
                 <Row>
                     <Col lg='12' className='mb-5'>
+                        <section className='common_section'>
+                            <Container className='text-center'><h1>PROFIL SUPER ADMINISTRATEUR</h1></Container>
+                        </section>
                         <div className="seller_section-title">
                             <h3>Enregistrement des Administrateurs de la Plateforme.</h3>
                         </div>

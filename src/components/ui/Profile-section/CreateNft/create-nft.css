@@ -2,7 +2,7 @@
     background: #EFF0F2;
     padding: 20px;
     border-radius: 10px;
-    border: thick double #151964;
+    border: thick double #303030;
     ;
 }
 
@@ -37,19 +37,21 @@
     border-radius: 50px !important;
     border: 1px !important;
     font-size: 0.9rem;
-    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
-    color: #fff;
+    background: #ace0f9;
     margin: 5px 5px 15px 0px;
 }
 
 .create_btn i {
-    color: #fff;
     font-size: 1rem;
     margin-right: 5px;
+    background: transparent;
+    color: #303030;
 }
 
 .create_btn:hover {
-    background: linear-gradient(90deg, rgb(0, 180, 237) -2.21%, rgb(0, 203, 130) 100%);
+    color: #303030;
+    text-decoration: none;
+    border: 1px solid #303030 !important;
 }
 
 .single_nft_card {
@@ -60,8 +62,8 @@
 
 .nft_img img {
     border-radius: 10px;
-    height: 270px;
-    width: 270px;
+    height: 300px;
+    width: 300px;
     object-fit: cover;
     object-position: center;
     max-width: 100%;

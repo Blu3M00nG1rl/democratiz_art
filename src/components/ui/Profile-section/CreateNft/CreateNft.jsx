@@ -9,6 +9,9 @@ function CreateNft() {
         <section>
             <Container>
                 <Row>
+                    <section className='common_section'>
+                        <Container className='text-center'><h1>PROFIL ARTISTE</h1></Container>
+                    </section>
                     <div className="seller_section-title">
                         <h3>Créer un nouveau NFT</h3>
                     </div>

@@ -34,7 +34,7 @@
 
 .input_item input {
     width: 100%;
-    border: 1px solid linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+    border: 1px solid linear-gradient(90deg, #fff1eb -2.21%, #ace0f9 100%);
     background: transparent;
     padding: 9px 25px;
     border-radius: 5px;
@@ -52,10 +52,9 @@
     outline: none;
     width: 120px;
     margin: auto;
-    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+    background: #fff1eb;
     border-radius: 50px;
     font-size: 0.8rem;
-    color: #fff;
     display: block;
     margin-top: 15px;
 }
@@ -69,8 +68,8 @@
 
 .close_modal i {
     padding: 5px;
-    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
-    color: #fff;
+    background: #fff1eb;
+    color: #303030;
     border-radius: 50%;
 }
 

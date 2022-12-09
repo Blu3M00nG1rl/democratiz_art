@@ -1,6 +1,5 @@
 .top_section {
     padding-top: 120px;
-    background: #f2f1f8;
 }
 
 .top_content h2 {
@@ -9,7 +8,7 @@
 }
 
 .top_content h2 span {
-    color: #151964;
+    color: #303030;
 }
 
 .top_btns {
@@ -23,19 +22,33 @@
     border-radius: 50px !important;
     border: 1px !important;
     font-size: 0.9rem;
-    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+    background: #fff1eb;
+    color: #303030;
+}
+
+.join_btn:hover {
+    color: #303030;
+    text-decoration: none;
+    border: 1px solid #303030;
 }
 
 .join_btn i,
 .create_btn i {
-    color: #fff;
+    color: #303030;
     font-size: 1rem;
+    background: #fff1eb;
 }
 
 .join_btn a,
 .create_btn a {
     text-decoration: none;
-    color: #fff;
+    color: #303030;
+}
+
+.join_btn a:hover,
+.create_btn a:hover {
+    color: #303030;
+    text-decoration: none;
 }
 
 .top_img {
@@ -45,12 +58,6 @@
 .top_img img {
     border-radius: 7px;
 }
-
-
-
-
-
-
 
 @media only screen and (max-width:992px) {
     .top_img {

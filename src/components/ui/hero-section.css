@@ -1,6 +1,5 @@
 .hero_section {
     padding-top: 120px;
-    background: #f2f1f8;
 }
 
 .hero_content h2 {
@@ -9,7 +8,7 @@
 }
 
 .hero_content h2 span {
-    color: #151964;
+    color: #303030;
 }
 
 .hero_btns {
@@ -23,28 +22,28 @@
     border-radius: 50px !important;
     border: 1px !important;
     font-size: 0.9rem;
-    background: linear-gradient(90deg, rgb(0, 203, 130) -2.21%, rgb(0, 180, 237) 100%);
+    background: #fff1eb;
 }
 
 .explore_btn i {
-    color: #fff;
     font-size: 1rem;
+    color: #303030;
 }
 
 .explore_btn a {
     text-decoration: none;
-    color: #fff;
+    color: #303030;
 }
 
 .explore_btn a:hover {
+    color: #303030;
     text-decoration: none;
-    color: #fff;
 }
 
 .explore_btn:hover {
-    background: linear-gradient(90deg, rgb(0, 180, 237) -2.21%, rgb(0, 203, 130) 100%);
+    color: #303030;
     text-decoration: none;
-    color: #fff;
+    border: 1px solid #303030 !important;
 }
 
 .hero_img {

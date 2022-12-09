@@ -2,7 +2,6 @@ import React from 'react';
 import { useRef } from 'react';
 
 import { Col, Container, Row } from 'reactstrap';
-import CommonSection from '../components/ui/Common-section/CommonSection.jsx';
 
 const Contact = () => {
 
@@ -19,7 +18,6 @@ const Contact = () => {
 
 
     return <>
-        <CommonSection title='Contact' />
         <section>
             <Container>
                 <Row>
