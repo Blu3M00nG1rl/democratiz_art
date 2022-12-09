@@ -7,6 +7,7 @@ import { ethers } from "ethers";
 import axios from "axios";
 import '../styles/nft-details.css';
 import creatorImg from '../assets/images/profile.png';
+import testImage from '../assets/nfts/img-01.jpg';
 
 function NftDetails(props) {
     const { tokenId } = useParams();
@@ -47,7 +48,7 @@ function NftDetails(props) {
                 <Container>
                     <Row>
                         <Col lg='6' md='6' sm='6'>
-                            <img src={"https://gateway.pinata.cloud/ipfs/" + nft.image}
+                            <img src={testImage}
                                 alt=''
                                 className='w-100 single_nft-img'
                             />

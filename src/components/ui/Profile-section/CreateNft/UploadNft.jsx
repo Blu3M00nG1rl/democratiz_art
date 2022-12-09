@@ -217,7 +217,7 @@ function UploadNft() {
                                             {loading ? (
                                                 <p className="badge rounded-pill bg-secondary">Chargement en cours ...</p>
                                             ) : (
-                                                <div className="nft_img">
+                                                <div className="upload_img">
                                                     <span>
                                                         <img src={fileURL} alt="" />
                                                     </span>

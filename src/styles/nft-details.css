@@ -1,5 +1,5 @@
 .nftDetails_section {
-    background: #f2f1f8;
+    margin-top: 5%;
 }
 
 .single_nft-img {
@@ -56,7 +56,7 @@
 
 .singleNft-btn {
     padding: 8PX 25px;
-    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    background-image: #fff1eb;
     border: none;
     outline: none;
     border-radius: 50px;
@@ -69,6 +69,13 @@
 .singleNft-btn a {
     text-decoration: none;
     font-size: 1rem;
+    color: #303030;
+}
+
+.singleNft-btn a:hover {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #303030;
 }
 
 .singleNft-btn:hover {

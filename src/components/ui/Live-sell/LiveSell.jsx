@@ -19,12 +19,10 @@ const LiveSell = () => {
             const contract = fetchContract(provider);
 
             const data = await contract.fetchMarketItem();
-            console.log(data);
             const items = await Promise.all(
                 data.map(
                     async ({ tokenId, seller, propr, price: unformattedPrice }) => {
                         const tokenURI = await contract.tokenURI(tokenId);
-                        console.log(tokenURI);
                         const {
                             data: { image, name, description },
                         } = await axios.get(tokenURI);
@@ -57,7 +55,6 @@ const LiveSell = () => {
     useEffect(() => {
         fetchNFTs().then((items) => {
             setListNfts(items.reverse());
-            console.log(items.reverse());
         });
     }, []);
 

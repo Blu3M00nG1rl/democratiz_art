@@ -74,6 +74,22 @@
     margin-bottom: 15px;
 }
 
+.upload_img img {
+    border-radius: 10px;
+    height: 270px;
+    width: 270px;
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.upload_img {
+    margin-bottom: 15px;
+}
+
+
+
 @media only screen and (max-width:576px) {
     .create_item {
         margin-top: 15px;

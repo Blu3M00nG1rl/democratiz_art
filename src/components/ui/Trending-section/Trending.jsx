@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import { fetchContract } from '../../../context/constants.js';
 import axios from "axios";
 import { ethers } from "ethers";
-import NftCard from '../Nft-card/NftCard';
+import NftCard from '../Nft-card/NftCardOld';
 import './trending.css';
 
 const Trending = () => {
@@ -17,12 +17,10 @@ const Trending = () => {
             const contract = fetchContract(provider);
 
             const data = await contract.fetchMarketItem();
-            console.log(data);
             const items = await Promise.all(
                 data.map(
                     async ({ tokenId, seller, propr, price: unformattedPrice }) => {
                         const tokenURI = await contract.tokenURI(tokenId);
-                        console.log(tokenURI);
                         const {
                             data: { image, name, description },
                         } = await axios.get(tokenURI);
