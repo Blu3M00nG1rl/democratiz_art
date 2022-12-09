@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import { fetchContract } from '../../../context/constants.js';
 import axios from "axios";
 import { ethers } from "ethers";
-import NftCard from '../Nft-card/NftCardOld';
+import NftCard from '../Nft-card/NftCard';
 import './trending.css';
 
 const Trending = () => {
@@ -42,7 +42,6 @@ const Trending = () => {
                     }
                 )
             );
-            //console.log("name : ", items[0].name);
             return items
         } catch (error) {
             alert("Erreur au chargement des NFTS");

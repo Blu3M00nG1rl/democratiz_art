@@ -19,6 +19,9 @@ const routers = () => {
             <Route path='/profile' element={<Profile />} />
             <Route path='/test' element={<Test />} />
             <Route path='/market/:tokenId' element={<NftDetails />} />
+            <Route path='/register' component={() => {
+                window.location.replace('https://docs.google.com/forms/d/e/1FAIpQLSehekEMHxtO1bsUW0zNlPjTwPavHqdXo9EDE_5hDowaAskslg/viewform');
+            }} />
         </Routes>
     );
 };

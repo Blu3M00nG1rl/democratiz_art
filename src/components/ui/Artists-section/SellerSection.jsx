@@ -3,7 +3,7 @@ import './seller-section.css';
 import { Container, Row, Col } from 'reactstrap'
 import { SELLER_DATA } from '../../../assets/data/data';
 
-const SellerSection = () => {
+function SellerSection() {
     return <section className="seller_section">
         <Container>
             <Row>

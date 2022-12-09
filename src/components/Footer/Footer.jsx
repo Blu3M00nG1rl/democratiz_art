@@ -71,14 +71,11 @@ const Footer = () => {
                     <p>DEMOCRATIZ_ART est une plateforme ouverte à tous les artistes plasticiens professionnels ou en devenir.
                         Nous vous aidons à digitaliser et fractionner vos oeuvres physiques pour les rendre accessibles à tous. Nous les mettons en vente sous forme de NFT ouvrant des bénéfices uniques à leurs acquéreurs.
                     </p>
-                    <button className='btn d-flex gap-2 align-items-center'>
-                        <span>
-                            <i className="ri-global-line"></i>
-                        </span>
-                        <Link to='/#'>
-                            Rejoignez Nous
-                        </Link>
+
+                    <button onClick={() => window.location = 'https://docs.google.com/forms/d/e/1FAIpQLSehekEMHxtO1bsUW0zNlPjTwPavHqdXo9EDE_5hDowaAskslg/viewform'} className='join_btn d-flex gap-2 align-items-center'>
+                        <i className="ri-registered-line"></i>Rejoignez Nous
                     </button>
+
                 </Col>
                 <Col lg="3" md="4" sm="6" className='foot_refs mb-4'>
                     <h5>MON COMPTE</h5>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal/Modal';
 import creatorImg from '../../../assets/images/profile.png';
+import testImage from '../../../assets/nfts/img-01.jpg';
 import './nft-card.css';
 import { Col } from 'reactstrap';
 
@@ -17,7 +18,7 @@ function NftCard(NFTData) {
                 <div className="single_nft_card" >
                     <Link to={`/market/${el.tokenId}`}>
                         <div className="nft_img" >
-                            <img src={"https://gateway.pinata.cloud/ipfs/" + el.image} alt="" />
+                            <img src={testImage} alt="" />
                         </div>
                     </Link>
                     <div className="nft_content">

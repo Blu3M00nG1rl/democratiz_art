@@ -6,7 +6,7 @@ import { ethers } from "ethers";
 
 //Contract Address and ABI
 export const Democratiz_ArtAddress =
-    "0x8F6fa783386d0b447a2CbCde213102Da4662dD76";
+    "0x42B96354A72AcF425fD54A61710367aB0645b3e5";
 export const Democratiz_ArtABI = Democratiz_Art.abi;
 
 //Fetching Smart Contract

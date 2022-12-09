@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 import "./live-sell.css";
-import NftCard from '../Nft-card/NftCard';
+import NftCard from '../Nft-card/NftCardPinata';
 import { fetchContract } from '../../../context/constants.js';
 import axios from "axios";
 import { ethers } from "ethers";

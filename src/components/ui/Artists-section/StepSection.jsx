@@ -38,7 +38,7 @@ const STEP_DATA = [
     },
 ]
 
-const StepSection = () => {
+function StepSection() {
     return <section className='step_section'>
         <Container>
             <Row>
