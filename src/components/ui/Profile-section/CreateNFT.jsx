@@ -216,7 +216,7 @@ function UploadNft() {
                                     <Row>
                                         <Col lg='7' className='mb-5'>
                                             {loading ? (
-                                                <p className="badge rounded-pill bg-secondary">Chargemnt en cours...</p>
+                                                <p className="badge rounded-pill bg-secondary">Chargement en cours...</p>
                                             ) : (
                                                 <div className="upload_img">
                                                     <span>

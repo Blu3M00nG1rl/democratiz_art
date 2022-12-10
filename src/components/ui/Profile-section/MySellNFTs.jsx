@@ -6,7 +6,6 @@ import { ethers } from "ethers";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import creatorImg from '../../../assets/images/profile.png';
-import testImage from '../../../assets/nfts/img-01.jpg';
 
 function MySellNFTs() {
 
@@ -112,7 +111,7 @@ function MySellNFTs() {
                                 <div className="single_nft_card" >
                                     <Link to={`/market/${item.tokenId}`}>
                                         <div className="nft_img" >
-                                            <img src={testImage} alt="" />
+                                            <img src={"https://gateway.pinata.cloud/ipfs/" + item.image} alt="" />
                                         </div>
                                     </Link>
                                     <div className="nft_content">

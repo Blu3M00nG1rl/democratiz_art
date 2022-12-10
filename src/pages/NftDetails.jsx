@@ -96,6 +96,10 @@ function NftDetails(props) {
         }
     };
 
+    async function resellToken(tokenId) {
+        window.location.href = '/resell/tokenId'
+    };
+
     //Watch if wallet connected
     useEffect(() => {
         checkIfWalletConnected();
@@ -179,7 +183,7 @@ function NftDetails(props) {
                                 {currentAccount === nftSellerToLowerCase ?
                                     (<p className='message_alert'>Vous êtes le vendeur de ce NFT</p>)
                                     : currentAccount === nftProprToLowerCase ? (
-                                        <button onClick={() => buyNFT(nft.tokenId)} className='singleNft-btn d-flex align-items-center gap-2 w-50'>
+                                        <button onClick={() => resellToken(nft.tokenId)} className='singleNft-btn d-flex align-items-center gap-2 w-50'>
                                             <i className='ri-shopping-bag-line'></i>
                                             <Link to=''>Revendre sur la Marketplace</Link>
                                         </button>)

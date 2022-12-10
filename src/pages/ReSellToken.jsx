@@ -4,7 +4,7 @@ import './resellToken.css';
 function ReSellToken(props) {
     return (
         <div>
-
+            RESELL TOKEN
         </div>
     );
 }
