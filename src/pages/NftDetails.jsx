@@ -13,6 +13,7 @@ function NftDetails(props) {
     const [nft, setNft] = useState({});
     const [nftSellerAbreg, setNftSellerAbreg] = useState("");
     const [nftSellerToLowerCase, setNftSellerToLowerCase] = useState("");
+    const [nftProprToLowerCase, setNftProprToLowerCase] = useState("");
     const [nftProprAbreg, setNftProprAbreg] = useState("");
     const [currentAccount, setCurrentAccount] = useState("");
 
@@ -76,6 +77,7 @@ function NftDetails(props) {
         setNftSellerAbreg(item.seller.substring(0, 6) + "..." + item.seller.substring(item.seller.length - 6));
         setNftSellerToLowerCase(item.seller.toLowerCase());
         setNftProprAbreg(item.propr.substring(0, 6) + "..." + item.propr.substring(item.propr.length - 6));
+        setNftProprToLowerCase(item.propr.toLowerCase());
         console.log(item);
     }, [tokenId]) // if tokenId changes, useEffect will run again
 
@@ -175,12 +177,17 @@ function NftDetails(props) {
 
                                 <p className='my-4'>{nft.description}</p>
                                 {currentAccount === nftSellerToLowerCase ?
-                                    <p className='message_alert'>Vous êtes le vendeur de ce NFT</p>
-                                    :
-                                    <button onClick={() => buyNFT(nft.tokenId)} className='singleNft-btn d-flex align-items-center gap-2 w-50'>
-                                        <i className='ri-shopping-bag-line'></i>
-                                        <Link to=''>Acheter</Link>
-                                    </button>}
+                                    (<p className='message_alert'>Vous êtes le vendeur de ce NFT</p>)
+                                    : currentAccount === nftProprToLowerCase ? (
+                                        <button onClick={() => buyNFT(nft.tokenId)} className='singleNft-btn d-flex align-items-center gap-2 w-50'>
+                                            <i className='ri-shopping-bag-line'></i>
+                                            <Link to=''>Revendre sur la Marketplace</Link>
+                                        </button>)
+                                        : (
+                                            <button onClick={() => buyNFT(nft.tokenId)} className='singleNft-btn d-flex align-items-center gap-2 w-50'>
+                                                <i className='ri-shopping-bag-line'></i>
+                                                <Link to=''>Acheter</Link>
+                                            </button>)}
                             </div>
                         </Col>
                     </Row>
