@@ -69,7 +69,7 @@ const LiveSell = () => {
                 </Col>
 
                 <Row className="d-flex align-items-center">
-                    {listNfts.length === 0 ? "Chargement en cours" : <NftCard NFTData={listNfts} />}
+                    {listNfts.length === 0 ? "Aucune Oeuvre en vente" : <NftCard NFTData={listNfts} />}
                 </Row>
             </Row>
         </Container>

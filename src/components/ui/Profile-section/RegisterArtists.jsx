@@ -49,11 +49,8 @@ const RegisterArtists = () => {
             <Container>
                 <Row>
                     <Col lg='12' className='mb-5'>
-                        <section className='common_section'>
-                            <Container className='text-center'><h1>PROFIL ADMINISTRATEUR</h1></Container>
-                        </section>
                         <div className="seller_section-title">
-                            <h3>Enregistrement des Artistes sur la Plateforme.</h3>
+                            <h3>ENREGISTREMENT DES ARTISTES SUR LA PLATEFORME</h3>
                         </div>
                         <div className="content">
                             <p>Liste blanche des artistes autorisés à utiliser la plateforme (identifiés par leur adresse Ethereum).</p>

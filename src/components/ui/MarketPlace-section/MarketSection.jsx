@@ -8,7 +8,7 @@ import { ethers } from "ethers";
 
 function MarketSection() {
 
-    const [listNfts, setListNfts] = useState([]);
+    const [listNFTs, setListNFTs] = useState([]);
 
     //Fetch NFTs
     async function fetchNFTs() {
@@ -23,7 +23,7 @@ function MarketSection() {
                         const tokenURI = await contract.tokenURI(tokenId);
                         console.log("tokenURI", tokenURI);
                         const {
-                            data: { image, name, description },
+                            data: { image, name, description, type, year, long, larg, numbNFTs, royalties },
                         } = await axios.get(tokenURI);
                         const price = ethers.utils.formatUnits(
                             unformattedPrice.toString(),
@@ -38,22 +38,26 @@ function MarketSection() {
                             image,
                             name,
                             description,
-                            tokenURI,
+                            type,
+                            year,
+                            long,
+                            larg,
+                            numbNFTs,
+                            royalties,
+                            tokenURI
                         };
                     }
                 )
             );
-            //console.log("name : ", items[0].name);
             return items
         } catch (error) {
-            alert("Erreur au chargement des NFTS");
-            console.log(error);
+            console.log("Erreur au chargement des NFTS", error);
         }
     };
 
     useEffect(() => {
         fetchNFTs().then((items) => {
-            setListNfts(items.reverse());
+            setListNFTs(items.reverse());
             console.log(items.reverse());
         });
     }, []);
@@ -90,7 +94,7 @@ function MarketSection() {
                     </Col>
 
                     <Row className="d-flex align-items-center">
-                        {listNfts.length === 0 ? "Chargement en cours" : <NftCard NFTData={listNfts} />}
+                        {listNFTs.length === 0 ? "Aucune Oeuvre en vente" : <NftCard NFTData={listNFTs} />}
                     </Row>
 
                 </Row>

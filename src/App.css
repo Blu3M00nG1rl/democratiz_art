@@ -46,6 +46,37 @@ footer {
   padding: 60px 0px;
 }
 
+.btn_global {
+  border: none;
+  padding: 7px 25px 0px 25px;
+  border-radius: 50px;
+  border: 1px;
+  font-size: 0.9rem;
+  background: #fff1eb;
+  cursor: pointer;
+}
+
+.btn_global i {
+  font-size: 1rem;
+  color: #303030;
+}
+
+.btn_global a {
+  text-decoration: none;
+  color: #303030;
+}
+
+.btn_global a:hover {
+  color: #303030;
+  text-decoration: none;
+}
+
+.btn_global:hover {
+  color: #303030;
+  text-decoration: none;
+  border: 1px solid #303030;
+}
+
 
 
 
@@ -53,7 +84,6 @@ footer {
 
 ::-webkit-scrollbar {
   width: 10px;
-  background: #343444;
 }
 
 ::-webkit-scrollbar-thumb {

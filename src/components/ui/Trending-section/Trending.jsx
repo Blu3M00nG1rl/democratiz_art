@@ -63,7 +63,7 @@ const Trending = () => {
                     <h3 className="trending title">TOP COLLECTIONS</h3>
                 </Col>
                 <Row className="d-flex align-items-center">
-                    {listNfts.length === 0 ? "Chargement en cours" : <NftCard NFTData={listNfts} />}
+                    {listNfts.length === 0 ? "Aucune Oeuvre en Vente" : <NftCard NFTData={listNfts} />}
                 </Row>
             </Row>
         </Container>

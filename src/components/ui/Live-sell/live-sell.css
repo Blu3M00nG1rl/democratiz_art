@@ -52,6 +52,10 @@
     font-weight: 500;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 .buy_btn {
     border: none;
     outline: none;
@@ -61,6 +65,7 @@
     color: #303030;
     border-radius: 50px;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .buy_btn:hover {
@@ -75,11 +80,14 @@
     font-size: 0.9rem;
 }
 
-.history_link a:hover {
+.history_link {
     color: #303030;
     text-decoration: none;
-    border: 1px solid #303030;
-    ;
+}
+
+.history_link {
+    color: #303030;
+    text-decoration: none;
 }
 
 .live_auction_top h3 {

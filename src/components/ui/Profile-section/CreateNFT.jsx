@@ -2,9 +2,10 @@ import { useState } from "react"
 import axios from "axios"
 import { Col, Row } from "reactstrap";
 import { ethers } from "ethers";
-import creatorImg from '../../../../assets/images/profile.png';
-import defaultNftImg from '../../../../assets/images/nft-logo.png';
-import { fetchContract } from '../../../../context/constants';
+import creatorImg from '../../../assets/images/profile.png';
+import defaultNftImg from '../../../assets/images/nft-logo.png';
+import { fetchContract } from '../../../context/constants.js';
+import './create-nft.css';
 const JWT = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiI1ZDRiNTAxMS0xODhiLTQ3NmYtYTE5MC0zNjhiNWI4YTM3NmEiLCJlbWFpbCI6InNjc29waGllY29uc3RhbnRpbkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGluX3BvbGljeSI6eyJyZWdpb25zIjpbeyJpZCI6IkZSQTEiLCJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MX0seyJpZCI6Ik5ZQzEiLCJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MX1dLCJ2ZXJzaW9uIjoxfSwibWZhX2VuYWJsZWQiOmZhbHNlLCJzdGF0dXMiOiJBQ1RJVkUifSwiYXV0aGVudGljYXRpb25UeXBlIjoic2NvcGVkS2V5Iiwic2NvcGVkS2V5S2V5IjoiMDI4MmRlYWE3MmRmMjA0MDBkMDMiLCJzY29wZWRLZXlTZWNyZXQiOiJkMmVjN2UwNDlmMDE3ZDExZDZiOTIzMWUxMTFjMzk1MGU2YmNmNzA4ZmY0ZWU1ZGZkYWIyNzU1ZjlmZDJkNGYxIiwiaWF0IjoxNjcwMTg3MjE2fQ.nbdMRSIJEpjfxKv4D0yT5E8PR_dOoSG1CI8AeOFSMk4`
 
 function UploadNft() {
@@ -136,7 +137,7 @@ function UploadNft() {
 
     const buttonCreate = <>
         <div>
-            <button className="create_btn" onClick={createNFT}><i className="ri-lightbulb-flash-line"></i>Creation NFT</button>
+            <button className="create_btn" onClick={createNFT}><i className="ri-lightbulb-flash-line"></i>CREATION NFT</button>
         </div>
     </>
 
@@ -191,7 +192,7 @@ function UploadNft() {
                                 </div>
                                 <div className="form-group mt-4">
                                     <label htmlFor="numbNfts">Nombre de NFTs</label>
-                                    <input id="numbNfts" type="number" className="form-control" placeholder="Nombre" min="2" max="  100" step="1" value={formParams.numbNfts} onChange={e => updateFormParams({ ...formParams, numbNfts: e.target.value })} />
+                                    <input id="numbNfts" type="number" className="form-control" placeholder="Nombre" min="2" max="  100" step="2" value={formParams.numbNfts} onChange={e => updateFormParams({ ...formParams, numbNfts: e.target.value })} />
                                 </div>
                                 <div className="form-group mt-4">
                                     <label htmlFor="royalties">Royalties(en %)</label>
@@ -215,7 +216,7 @@ function UploadNft() {
                                     <Row>
                                         <Col lg='7' className='mb-5'>
                                             {loading ? (
-                                                <p className="badge rounded-pill bg-secondary">Chargement en cours ...</p>
+                                                <p className="badge rounded-pill bg-secondary">Chargemnt en cours...</p>
                                             ) : (
                                                 <div className="upload_img">
                                                     <span>

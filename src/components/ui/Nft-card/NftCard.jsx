@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Modal from '../Modal/Modal';
 import creatorImg from '../../../assets/images/profile.png';
 import './nft-card.css';
 import { Col } from 'reactstrap';
 
 function NftCard(NFTData) {
-
-
-    const [showModal, setShowModal] = useState(false);
 
     return <>
         {NFTData.NFTData.map((el, i) => (
@@ -30,28 +26,24 @@ function NftCard(NFTData) {
 
                             <div className='creator_info w-100 d-flex align-items-center justify-content-between'>
                                 <div>
-                                    <h6>Créé Par</h6>
-                                    <p>{el.seller.substring(0, 6) + "......" + el.seller.substring(el.seller.length - 6)}</p>
+                                    <h6>Vendeur</h6>
+                                    <p>{el.seller.substring(0, 6) + ".." + el.seller.substring(el.seller.length - 6)}</p>
                                 </div>
 
                                 <div>
-                                    <h6>Prix actuel</h6>
+                                    <h6>Prix</h6>
                                     <p>{el.price} MATIC</p>
                                 </div>
                             </div>
                         </div>
-
-                        <div className='mt-3 d-flex align-item-center justify-content-between'>
-                            <button className="buy_btn d-flex align-items-center gap-1" onClick={() => setShowModal(true)}>
-                                <i className="ri-shopping-bag-line"></i>Acheter
-                            </button>
-
-
-                            {showModal && <Modal setShowModal={setShowModal} />}
-
-                            <span className='history_link'><Link to="#">Voir l'Historique</Link></span>
-                        </div>
-
+                        <Link to={`/market/${el.tokenId}`}>
+                            <div className='mt-3 d-flex align-item-center justify-content-between'>
+                                <button className="buy_btn d-flex align-items-center gap-1">
+                                    <i className="ri-file-list-3-line"></i>Detail
+                                </button>
+                                <span className='history_link'>Voir l'Historique</span>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </Col>

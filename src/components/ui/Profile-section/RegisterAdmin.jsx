@@ -50,11 +50,8 @@ const RegisterAdmin = () => {
             <Container>
                 <Row>
                     <Col lg='12' className='mb-5'>
-                        <section className='common_section'>
-                            <Container className='text-center'><h1>PROFIL SUPER ADMINISTRATEUR</h1></Container>
-                        </section>
                         <div className="seller_section-title">
-                            <h3>Enregistrement des Administrateurs de la Plateforme.</h3>
+                            <h3>ENREGISTREMENT DES ADMINISTRATEURS SUR LA PLATEFORME</h3>
                         </div>
                         <div className="content">
                             <p>Liste blanche des administrateurs identifiés par leur adresse Ethereum.</p>
