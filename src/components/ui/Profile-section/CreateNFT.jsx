@@ -92,7 +92,7 @@ function UploadNft() {
                 updateFormParams({ name: '', description: '', type: '', year: '', long: '', larg: '', price: '', numbNfts: '', royalties: '' });
                 setFileURL(null);
             } catch (error) {
-                alert("Erreur lors de la création de votre NFT : ", error);
+                console.log("Erreur lors de la création de votre NFT : ", error);
             }
         }
     }
@@ -118,7 +118,7 @@ function UploadNft() {
             await transaction.wait();
             console.log(transaction);
         } catch (error) {
-            alert("Erreur pendant la création de la vente");
+            console.log("Erreur pendant la création de la vente");
             console.log(error);
         }
     };

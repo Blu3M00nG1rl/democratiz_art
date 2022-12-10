@@ -44,8 +44,7 @@ const Trending = () => {
             );
             return items
         } catch (error) {
-            alert("Erreur au chargement des NFTS");
-            console.log(error);
+            console.log("Erreur au chargement des NFTS", error);
         }
     };
 

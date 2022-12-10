@@ -28,7 +28,7 @@ function MyNFTs() {
                 alert("Aucun compte trouvé");
             }
         } catch (error) {
-            alert("Erreur de connexion au wallet");
+            console.log("Erreur de connexion au wallet", error);
         }
     };
 
