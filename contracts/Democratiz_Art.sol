@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
-//Console functions to help debug the smart contract just like in Javascript
 import "../node_modules/hardhat/console.sol";
 /// @dev Import contracts from openzeppelin
 import "../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
@@ -38,7 +37,7 @@ contract Democratiz_Art is ERC721URIStorage {
 
     event ArtistRegistered(address _address);
 
-    event idToMarketItemCreated(
+    event MarketItemCreated(
         uint256 indexed tokenId,
         address seller,
         address owner,
@@ -149,7 +148,7 @@ contract Democratiz_Art is ERC721URIStorage {
         /// @dev transfer to contract
         _transfer(msg.sender, address(this), tokenId);
 
-        emit idToMarketItemCreated(
+        emit MarketItemCreated(
             tokenId,
             msg.sender,
             address(this),
@@ -162,7 +161,7 @@ contract Democratiz_Art is ERC721URIStorage {
     function reSellToken(uint256 tokenId, uint256 price) public payable {
         require(
             idToMarketItem[tokenId].owner == msg.sender,
-            unicode"Vous n'êtes pas le owneriétaire de ce token"
+            unicode"Vous n'êtes pas le propriétaire de ce token"
         );
 
         require(
@@ -202,7 +201,7 @@ contract Democratiz_Art is ERC721URIStorage {
     }
 
     /// @dev Get Unsold NFT Datas
-    function fetchMarketItem() public view returns (MarketItem[] memory) {
+    function fetchMarketItems() public view returns (MarketItem[] memory) {
         uint256 itemCount = _tokenIds.current();
         uint256 unsoldItemCount = _tokenIds.current() - _itemsSold.current();
         uint256 currentIndex = 0;
@@ -221,19 +220,19 @@ contract Democratiz_Art is ERC721URIStorage {
     }
 
     /// @dev Get only the NFTs of the user
-    function fetchMyNFT() public view returns (MarketItem[] memory) {
-        uint256 totalCount = _tokenIds.current();
+    function fetchMyNFTs() public view returns (MarketItem[] memory) {
+        uint256 totalItemCount = _tokenIds.current();
         uint256 itemCount = 0;
         uint256 currentIndex = 0;
 
-        for (uint256 i = 0; i < totalCount; i++) {
+        for (uint256 i = 0; i < totalItemCount; i++) {
             if (idToMarketItem[i + 1].owner == msg.sender) {
-                itemCount = i + 1;
+                itemCount += 1;
             }
         }
 
         MarketItem[] memory items = new MarketItem[](itemCount);
-        for (uint256 i = 0; i < totalCount; i++) {
+        for (uint256 i = 0; i < totalItemCount; i++) {
             if (idToMarketItem[i + 1].owner == msg.sender) {
                 uint256 currentId = i + 1;
                 MarketItem storage currentItem = idToMarketItem[currentId];
@@ -246,18 +245,18 @@ contract Democratiz_Art is ERC721URIStorage {
 
     /// @dev Returns item listed by user
     function fetchItemsListed() public view returns (MarketItem[] memory) {
-        uint256 totalCount = _tokenIds.current();
+        uint256 totalItemCount = _tokenIds.current();
         uint256 itemCount = 0;
         uint256 currentIndex = 0;
 
-        for (uint256 i = 0; i < totalCount; i++) {
+        for (uint256 i = 0; i < totalItemCount; i++) {
             if (idToMarketItem[i + 1].seller == msg.sender) {
-                itemCount = i + 1;
+                itemCount += 1;
             }
         }
 
         MarketItem[] memory items = new MarketItem[](itemCount);
-        for (uint256 i = 0; i < totalCount; i++) {
+        for (uint256 i = 0; i < totalItemCount; i++) {
             if (idToMarketItem[i + 1].seller == msg.sender) {
                 uint256 currentId = i + 1;
                 MarketItem storage currentItem = idToMarketItem[currentId];

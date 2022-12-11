@@ -16,7 +16,7 @@ function MarketSection() {
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const contract = fetchContract(provider);
 
-            const data = await contract.fetchMarketItem();
+            const data = await contract.fetchMarketItems();
             const items = await Promise.all(
                 data.map(
                     async ({ tokenId, seller, owner, price: unformattedPrice }) => {

@@ -29,7 +29,7 @@ export const NFT_DATA = [
     {
         id: "01",
         title: "Flowers in a Metal Vase",
-        desc: " Institution: Mauritshuis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae provident, optio doloremque, aut sed cumque eum accusantium fugiat necessitatibus omnis repellendus? Eaque odit, cumque nobis impedit commodi accusamus amet facere quibusdam ex, id consequatur facilis, incidunt sapiente fugiat natus modi!",
+        desc: "Institution: Mauritshuis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae provident, optio doloremque, aut sed cumque eum accusantium fugiat necessitatibus omnis repellendus? Eaque odit, cumque nobis impedit commodi accusamus amet facere quibusdam ex, id consequatur facilis, incidunt sapiente fugiat natus modi!",
         imgUrl: img01,
         creator: "Abraham Mignon",
         creatorImg: ava02,

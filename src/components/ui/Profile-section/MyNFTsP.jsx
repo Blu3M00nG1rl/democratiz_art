@@ -51,7 +51,7 @@ function MyNFTs() {
             if (currentAccount) {
 
                 const contract = await connectingWithSmartContract();
-                const data = await contract.fetchMyNFT();
+                const data = await contract.fetchMyNFTs();
                 const items = await Promise.all(
                     console.log("data", data.data)
                 );

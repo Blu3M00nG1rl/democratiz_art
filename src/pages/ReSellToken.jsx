@@ -8,7 +8,7 @@ function ReSellToken(props) {
             <Container>
                 <Row>
                     <section className='common_section'>
-                        <Container className='text-center'><h1>PAGE DE REVENTE</h1></Container>
+                        <Container className='text-center'><h1>PAGE DE REVENTE EN CONSTRUCTION</h1></Container>
                     </section>
                 </Row>
             </Container>
