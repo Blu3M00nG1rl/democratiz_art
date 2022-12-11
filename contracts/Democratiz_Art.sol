@@ -48,7 +48,7 @@ contract Democratiz_Art is ERC721URIStorage {
 
     constructor() ERC721("NFT Democratiz_Art", "DANFT") {
         owner == payable(msg.sender);
-        superAdmin = msg.sender; // 'msg.sender' is superAdmin
+        superAdmin = msg.sender;
     }
 
     ///@dev Returns the address of the superAdmin.
