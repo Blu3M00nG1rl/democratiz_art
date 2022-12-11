@@ -6,11 +6,11 @@ import { ethers } from "ethers";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import creatorImg from '../../../assets/images/profile.png';
-import ImgTemp from '../../../assets/images/nft-logo.png';
 
-function MySellNFTs() {
 
-    const [listMySellNFTs, setListMySellNFTs] = useState([]);
+function MyNFTs() {
+
+    const [listMyNFTs, setListMyNFTs] = useState([]);
     const [currentAccount, setCurrentAccount] = useState("");
 
     //Verify Wallet
@@ -46,45 +46,15 @@ function MySellNFTs() {
     };
 
     //Fetch My NFTs
-    const fetchMySellNFTs = useCallback(async () => {
+    const fetchMyNFTs = useCallback(async () => {
         try {
             if (currentAccount) {
 
                 const contract = await connectingWithSmartContract();
-                const data = await contract.fetchItemsListed();
+                const data = await contract.fetchMyNFT();
                 const items = await Promise.all(
-                    data.map(
-                        async ({ tokenId, seller, owner, price: unformattedPrice }) => {
-                            const tokenURI = await contract.tokenURI(tokenId);
-                            console.log("tokenURI", tokenURI);
-                            const {
-                                data: { image, name, description, type, year, long, larg, numbNFTs, royalties },
-                            } = await axios.get(tokenURI);
-                            const price = ethers.utils.formatUnits(
-                                unformattedPrice.toString(),
-                                "ether"
-                            );
-
-                            return {
-                                price,
-                                tokenId: tokenId.toNumber(),
-                                seller,
-                                owner,
-                                image,
-                                name,
-                                description,
-                                type,
-                                year,
-                                long,
-                                larg,
-                                numbNFTs,
-                                royalties,
-                                tokenURI
-                            };
-                        }
-                    )
+                    console.log("data", data.data)
                 );
-                return setListMySellNFTs(items);
             }
         } catch (error) {
             console.log("Erreur de chargement des NFTs", error);
@@ -97,22 +67,22 @@ function MySellNFTs() {
     });
 
     useEffect(() => {
-        fetchMySellNFTs()
+        fetchMyNFTs()
 
-    }, [fetchMySellNFTs]);
+    }, [fetchMyNFTs]);
 
     return <>
         <section>
             <Container>
                 <Row className="d-flex align-items-center">
-                    {listMySellNFTs.length === 0 ? "AUCUNE OEUVRE EN VENTE" :
-                        listMySellNFTs.map((item, index) => (
+                    {listMyNFTs.length === 0 ? "AUCUNE OEUVRE ACHETEE" :
+                        listMyNFTs.map((item, index) => (
                             <Col lg="3" md='4' sm='6' className='mb-4' key={index}>
                                 <h5 className='nft_title'>{item.name}</h5>
                                 <div className="single_nft_card" >
                                     <Link to={`/market/${item.tokenId}`}>
                                         <div className="nft_img" >
-                                            <img src={ImgTemp} alt="" />
+                                            <img src={"https://gateway.pinata.cloud/ipfs/" + item.image} alt="" />
                                         </div>
                                     </Link>
                                     <div className="nft_content">
@@ -154,4 +124,4 @@ function MySellNFTs() {
     </>
 };
 
-export default MySellNFTs;
+export default MyNFTs;

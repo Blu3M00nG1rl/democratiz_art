@@ -1,11 +1,18 @@
 import React from 'react';
-import './resellToken.css';
+import { Container, Row } from 'reactstrap';
+import './../styles/resell-token.css';
 
 function ReSellToken(props) {
     return (
-        <div>
-            RESELL TOKEN
-        </div>
+        <section>
+            <Container>
+                <Row>
+                    <section className='common_section'>
+                        <Container className='text-center'><h1>PAGE DE REVENTE</h1></Container>
+                    </section>
+                </Row>
+            </Container>
+        </section>
     );
 }
 

@@ -67,16 +67,15 @@ function Profile() {
         const signer = provider.getSigner();
         const contract = new ethers.Contract(Democratiz_ArtAddress, Democratiz_ArtABI, signer);
 
-        let propr = contract.owner();
-        propr
+        let superAdmin = contract.checkSuperAdmin();
+        superAdmin
             .then((data) => {
-                const owner = data.toLowerCase();
+                const superAdmin = data.toLowerCase();
                 const wallet = accounts[0].toLowerCase();
-                console.log("owner :" + owner);
-                if (owner === wallet) {
+                if (superAdmin === wallet) {
                     setStatutProfile("PROFIL SUPER ADMINISTRATEUR");
-                    console.log("Owner : true");
-                } else { console.log("Owner : false"); }
+                    console.log("SuperAdmin : true");
+                } else { console.log("SuperAdmin : false"); }
                 let admin = contract.adminRegistered(accounts[0]);
                 admin
                     .then((data) => {

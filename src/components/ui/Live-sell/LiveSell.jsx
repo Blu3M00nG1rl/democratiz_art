@@ -21,7 +21,7 @@ const LiveSell = () => {
             const data = await contract.fetchMarketItem();
             const items = await Promise.all(
                 data.map(
-                    async ({ tokenId, seller, propr, price: unformattedPrice }) => {
+                    async ({ tokenId, seller, owner, price: unformattedPrice }) => {
                         const tokenURI = await contract.tokenURI(tokenId);
                         const {
                             data: { image, name, description },
@@ -35,7 +35,7 @@ const LiveSell = () => {
                             price,
                             tokenId: tokenId.toNumber(),
                             seller,
-                            propr,
+                            owner,
                             image,
                             name,
                             description,

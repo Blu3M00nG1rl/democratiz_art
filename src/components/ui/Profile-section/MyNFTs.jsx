@@ -53,7 +53,7 @@ function MyNFTs() {
                 const data = await contract.fetchMyNFT();
                 const items = await Promise.all(
                     data.map(
-                        async ({ tokenId, seller, propr, price: unformattedPrice }) => {
+                        async ({ tokenId, seller, owner, price: unformattedPrice }) => {
                             const tokenURI = await contract.tokenURI(tokenId);
                             console.log("tokenURI", tokenURI);
                             const {
@@ -68,7 +68,7 @@ function MyNFTs() {
                                 price,
                                 tokenId: tokenId.toNumber(),
                                 seller,
-                                propr,
+                                owner,
                                 image,
                                 name,
                                 description,
@@ -119,13 +119,13 @@ function MyNFTs() {
 
                                         <div className="creator_info-wrapper d-flex gap-3">
                                             <div className="creator_img">
-                                                <img src={"https://gateway.pinata.cloud/ipfs/" + item.image} alt="" className='w-100' />
+                                                <img src="" alt="" className='w-100' />
                                             </div>
 
                                             <div className='creator_info w-100 d-flex align-items-center justify-content-between'>
                                                 <div>
                                                     <h6>Propriétaire</h6>
-                                                    <p>{item.propr.substring(0, 6)}...{item.propr.substring(item.propr.length - 6)}</p>
+                                                    <p>{item.owner.substring(0, 6)}...{item.owner.substring(item.owner.length - 6)}</p>
 
                                                 </div>
 

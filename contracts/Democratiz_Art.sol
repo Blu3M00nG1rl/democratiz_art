@@ -7,9 +7,8 @@ import "../node_modules/hardhat/console.sol";
 import "../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
-import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 
-contract Democratiz_Art is ERC721URIStorage, Ownable {
+contract Democratiz_Art is ERC721URIStorage {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIds;
@@ -17,7 +16,9 @@ contract Democratiz_Art is ERC721URIStorage, Ownable {
 
     uint256 listingPrice = 0.0015 ether;
 
-    address payable propr;
+    address payable owner;
+
+    address private superAdmin;
 
     mapping(address => bool) private admins;
 
@@ -28,7 +29,7 @@ contract Democratiz_Art is ERC721URIStorage, Ownable {
     struct MarketItem {
         uint256 tokenId;
         address payable seller;
-        address payable propr;
+        address payable owner;
         uint256 price;
         bool sold;
     }
@@ -40,17 +41,27 @@ contract Democratiz_Art is ERC721URIStorage, Ownable {
     event idToMarketItemCreated(
         uint256 indexed tokenId,
         address seller,
-        address propr,
+        address owner,
         uint256 price,
         bool sold
     );
 
     constructor() ERC721("NFT Democratiz_Art", "DANFT") {
-        propr == payable(msg.sender);
+        owner == payable(msg.sender);
+        superAdmin = msg.sender; // 'msg.sender' is superAdmin
+    }
+
+    ///@dev Returns the address of the superAdmin.
+    function checkSuperAdmin() public view virtual returns (address) {
+        return superAdmin;
     }
 
     /// @dev manage artists and admin access
-    function registerAdmin(address _address) public onlyOwner {
+    function registerAdmin(address _address) public {
+        require(
+            superAdmin == msg.sender,
+            unicode"Les Administrateurs ne peuvent être enrgistrés que par le superAdmin"
+        );
         require(!admins[_address], unicode"Cette personne est déjà admin.");
         admins[_address] = true;
         emit AdminRegistered(_address);
@@ -88,11 +99,11 @@ contract Democratiz_Art is ERC721URIStorage, Ownable {
     }
 
     /// @dev Charge money for Democratiz_Art
-    function updateListingPrice(uint256 _listingPrice)
-        public
-        payable
-        onlyOwner
-    {
+    function updateListingPrice(uint256 _listingPrice) public payable {
+        require(
+            owner == msg.sender,
+            unicode"Le prix du listing sur la plateforme ne peut être modifié que par le propriétaire du contrat"
+        );
         listingPrice = _listingPrice;
     }
 
@@ -150,8 +161,8 @@ contract Democratiz_Art is ERC721URIStorage, Ownable {
     /// @dev allows a purchase token to be resale
     function reSellToken(uint256 tokenId, uint256 price) public payable {
         require(
-            idToMarketItem[tokenId].propr == msg.sender,
-            unicode"Vous n'êtes pas le propriétaire de ce token"
+            idToMarketItem[tokenId].owner == msg.sender,
+            unicode"Vous n'êtes pas le owneriétaire de ce token"
         );
 
         require(
@@ -162,7 +173,7 @@ contract Democratiz_Art is ERC721URIStorage, Ownable {
         idToMarketItem[tokenId].sold = false;
         idToMarketItem[tokenId].price = price;
         idToMarketItem[tokenId].seller = payable(msg.sender);
-        idToMarketItem[tokenId].propr = payable(address(this));
+        idToMarketItem[tokenId].owner = payable(address(this));
 
         _itemsSold.decrement();
 
@@ -178,7 +189,7 @@ contract Democratiz_Art is ERC721URIStorage, Ownable {
             unicode"Merci d'indiquer le prix demandé pour finaliser l'achat"
         );
 
-        idToMarketItem[tokenId].propr = payable(msg.sender);
+        idToMarketItem[tokenId].owner = payable(msg.sender);
         idToMarketItem[tokenId].sold = true;
         idToMarketItem[tokenId].seller = payable(address(0));
 
@@ -186,7 +197,7 @@ contract Democratiz_Art is ERC721URIStorage, Ownable {
 
         _transfer(address(this), msg.sender, tokenId);
 
-        payable(propr).transfer(listingPrice);
+        payable(owner).transfer(listingPrice);
         payable(idToMarketItem[tokenId].seller).transfer(msg.value);
     }
 
@@ -198,7 +209,7 @@ contract Democratiz_Art is ERC721URIStorage, Ownable {
 
         MarketItem[] memory items = new MarketItem[](unsoldItemCount);
         for (uint256 i = 0; i < itemCount; i++) {
-            if (idToMarketItem[i + 1].propr == address(this)) {
+            if (idToMarketItem[i + 1].owner == address(this)) {
                 uint256 currentId = i + 1;
 
                 MarketItem storage currentItem = idToMarketItem[currentId];
@@ -216,14 +227,14 @@ contract Democratiz_Art is ERC721URIStorage, Ownable {
         uint256 currentIndex = 0;
 
         for (uint256 i = 0; i < totalCount; i++) {
-            if (idToMarketItem[i + 1].propr == msg.sender) {
+            if (idToMarketItem[i + 1].owner == msg.sender) {
                 itemCount = i + 1;
             }
         }
 
         MarketItem[] memory items = new MarketItem[](itemCount);
         for (uint256 i = 0; i < totalCount; i++) {
-            if (idToMarketItem[i + 1].propr == msg.sender) {
+            if (idToMarketItem[i + 1].owner == msg.sender) {
                 uint256 currentId = i + 1;
                 MarketItem storage currentItem = idToMarketItem[currentId];
                 items[currentIndex] = currentItem;

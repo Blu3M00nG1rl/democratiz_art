@@ -19,7 +19,10 @@ function MarketSection() {
             const data = await contract.fetchMarketItem();
             const items = await Promise.all(
                 data.map(
-                    async ({ tokenId, seller, propr, price: unformattedPrice }) => {
+                    async ({ tokenId, seller, owner, price: unformattedPrice }) => {
+                        console.log("tokenId", tokenId._hex);
+                        console.log("seller", seller);
+                        console.log("owner", owner);
                         const tokenURI = await contract.tokenURI(tokenId);
                         console.log("tokenURI", tokenURI);
                         const {
@@ -34,7 +37,7 @@ function MarketSection() {
                             price,
                             tokenId: tokenId.toNumber(),
                             seller,
-                            propr,
+                            owner,
                             image,
                             name,
                             description,

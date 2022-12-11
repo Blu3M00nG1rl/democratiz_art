@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/contracts/Democratiz_Art.sol": {
-      "lastModificationDate": 1670586575721,
-      "contentHash": "df75435b560363aec50592322271b792",
+      "lastModificationDate": 1670752053440,
+      "contentHash": "b9713bbfb7612efb857f41f185728000",
       "sourceName": "contracts/Democratiz_Art.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -32,8 +32,7 @@
         "../node_modules/hardhat/console.sol",
         "../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol",
         "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
-        "../node_modules/@openzeppelin/contracts/utils/Counters.sol",
-        "../node_modules/@openzeppelin/contracts/access/Ownable.sol"
+        "../node_modules/@openzeppelin/contracts/utils/Counters.sol"
       ],
       "versionPragmas": [
         "0.8.17"
@@ -75,86 +74,6 @@
       ],
       "artifacts": [
         "console"
-      ]
-    },
-    "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
-      "lastModificationDate": 1670416629901,
-      "contentHash": "190f627b9302b9602d3a313e28205cc5",
-      "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./IERC721.sol",
-        "./IERC721Receiver.sol",
-        "./extensions/IERC721Metadata.sol",
-        "../../utils/Address.sol",
-        "../../utils/Context.sol",
-        "../../utils/Strings.sol",
-        "../../utils/introspection/ERC165.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "ERC721"
-      ]
-    },
-    "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1670416629913,
-      "contentHash": "e436cea06129be2c73cda4b1acc848b5",
-      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../utils/Context.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Ownable"
       ]
     },
     "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/utils/Counters.sol": {
@@ -229,10 +148,10 @@
         "ERC721URIStorage"
       ]
     },
-    "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
-      "lastModificationDate": 1670416629917,
-      "contentHash": "396031251978f8febfd90cb62cb240ec",
-      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
+    "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1670416629901,
+      "contentHash": "190f627b9302b9602d3a313e28205cc5",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
       "solcConfig": {
         "version": "0.8.17",
         "settings": {
@@ -257,13 +176,54 @@
         }
       },
       "imports": [
-        "./math/Math.sol"
+        "./IERC721.sol",
+        "./IERC721Receiver.sol",
+        "./extensions/IERC721Metadata.sol",
+        "../../utils/Address.sol",
+        "../../utils/Context.sol",
+        "../../utils/Strings.sol",
+        "../../utils/introspection/ERC165.sol"
       ],
       "versionPragmas": [
         "^0.8.0"
       ],
       "artifacts": [
-        "Strings"
+        "ERC721"
+      ]
+    },
+    "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1670416629893,
+      "contentHash": "f31ad6fc4bbf9c06203987220156a6ba",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "Address"
       ]
     },
     "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/utils/Context.sol": {
@@ -301,10 +261,10 @@
         "Context"
       ]
     },
-    "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1670416629893,
-      "contentHash": "f31ad6fc4bbf9c06203987220156a6ba",
-      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+    "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1670416629917,
+      "contentHash": "396031251978f8febfd90cb62cb240ec",
+      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
       "solcConfig": {
         "version": "0.8.17",
         "settings": {
@@ -328,12 +288,14 @@
           }
         }
       },
-      "imports": [],
+      "imports": [
+        "./math/Math.sol"
+      ],
       "versionPragmas": [
-        "^0.8.1"
+        "^0.8.0"
       ],
       "artifacts": [
-        "Address"
+        "Strings"
       ]
     },
     "/home/blu3m00n/Documents/Informatique/Développement/Alyra/Ethereum/Projets/democratiz_art/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
