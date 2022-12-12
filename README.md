@@ -14,7 +14,7 @@ $ npx hardhat
 4. Installation de dotenv et création d'un fichier .env pour y intégrer des variables d'environnement (Api Key d'Alchemy et PrivateKey des comptes)
 $ npm install dotenv
 5. hardhat.config.js : modification des paramètres de networks pour travailler sur les testnet mumbai et goerli(avec un clé alchemy)
-6. Installer les contrats openzeppelin : 
+6. Installation des contrats openzeppelin : 
 $ npm install @openzeppelin/contracts
 7. Deploiement du smart contract - exemple plateforme goerli : 
 $ npx hardhat run scripts/deploy.js --network goerli
@@ -43,7 +43,7 @@ Un seul test réalisé.
 4. Ajout de la gestion des royalties.
 
 # Autres Informations
-1. Vidéo de démonstration de l'application disponible ici : https://www.loom.com/share/b6e7ed94dc374917b63b2e0b72266ac6
+1. Vidéo de démonstration de l'application disponible ici : https://www.loom.com/share/b004a8499b0b43c991e9d0ea0fa3e42f
 2. Application visible depuis Vercel : https://democratiz-art.vercel.app/home
 3. L'application est déployée sur le testnet Goerli à l'adresse ci-après : https://goerli.etherscan.io/address/0xD564fA75Ec1e2fE39A60D7c3F5068Eb6D27F39B8
 4. L'application est déployée sur le testnet Mumbai à l'adresse ci-après :
