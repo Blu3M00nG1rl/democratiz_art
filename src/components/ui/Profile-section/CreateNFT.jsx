@@ -254,7 +254,7 @@ function UploadNft() {
                                 </div>
                                 <div className="form-group mt-4">
                                     <label htmlFor="numbNfts">Nombre de NFTs</label>
-                                    <input id="numbNfts" type="number" className="form-control" placeholder="Nombre" min="2" max="  100" step="2" value={formParams.numbNfts} onChange={e => updateFormParams({ ...formParams, numbNfts: e.target.value })} />
+                                    <input id="numbNfts" type="number" className="form-control" placeholder="Nombre" min="2" max="100" value={formParams.numbNfts} onChange={e => updateFormParams({ ...formParams, numbNfts: e.target.value })} />
                                 </div>
                                 <div className="form-group mt-4">
                                     <label htmlFor="royalties">Royalties(en %)</label>
