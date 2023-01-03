@@ -6,6 +6,7 @@ import creatorImg from '../../../assets/images/profile.png';
 import defaultNftImg from '../../../assets/images/nft-logo.png';
 import { fetchContract } from '../../../context/constants.js';
 import './create-nft.css';
+const { createCanvas, loadImage } = require("canvas");
 const JWT = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiI1ZDRiNTAxMS0xODhiLTQ3NmYtYTE5MC0zNjhiNWI4YTM3NmEiLCJlbWFpbCI6InNjc29waGllY29uc3RhbnRpbkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGluX3BvbGljeSI6eyJyZWdpb25zIjpbeyJpZCI6IkZSQTEiLCJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MX0seyJpZCI6Ik5ZQzEiLCJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MX1dLCJ2ZXJzaW9uIjoxfSwibWZhX2VuYWJsZWQiOmZhbHNlLCJzdGF0dXMiOiJBQ1RJVkUifSwiYXV0aGVudGljYXRpb25UeXBlIjoic2NvcGVkS2V5Iiwic2NvcGVkS2V5S2V5IjoiMDI4MmRlYWE3MmRmMjA0MDBkMDMiLCJzY29wZWRLZXlTZWNyZXQiOiJkMmVjN2UwNDlmMDE3ZDExZDZiOTIzMWUxMTFjMzk1MGU2YmNmNzA4ZmY0ZWU1ZGZkYWIyNzU1ZjlmZDJkNGYxIiwiaWF0IjoxNjcwMTg3MjE2fQ.nbdMRSIJEpjfxKv4D0yT5E8PR_dOoSG1CI8AeOFSMk4`
 
 function UploadNft() {
@@ -16,10 +17,71 @@ function UploadNft() {
     const [fileURL, setFileURL] = useState(defaultNftImg);
     const [fileUploaded, setFileUploaded] = useState(false); //gère l'affichage du bouton create
     const [loading, setLoading] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [nftPieces, setNftPieces] = useState([]);
+    const [nbrCols, setNbrCols] = useState(null);
+    const [lastCol, setLastCol] = useState(1);
+    const [piecesHeight, setPiecesHeight] = useState(null);
 
     function changeHandler(event) {
         setSelectedFile(event.target.files[0]);
         setNameFile(event.target.files[0].name);
+        setSelectedImage(URL.createObjectURL(event.target.files[0]));
+        loadImage(URL.createObjectURL(event.target.files[0])).then((image) => {
+            let w = image.naturalWidth;
+            console.log(w);
+            let h = image.naturalHeight;
+            console.log(h);
+            let nbNfts = formParams.numbNfts;
+            console.log("nbt Nfts : ", nbNfts);
+            //Calc cols et rows
+            let cols = Math.floor(Math.sqrt(nbNfts));
+            setNbrCols(cols);
+            console.log("cols " + cols);
+            let rows = Math.ceil(nbNfts / cols);
+            console.log("rows " + rows);
+            let nbPieces = rows * cols;
+            let diffPieces = (nbPieces - nbNfts);
+            console.log("nbre_pieces " + nbPieces);
+            console.log("différence " + diffPieces);
+            diffPieces === 0 ? setLastCol(cols) : setLastCol(cols - diffPieces);
+            //Size of Pieces
+            const widthOfOnePiece = w / cols;
+            console.log("width_piece " + widthOfOnePiece);
+            const widthOfLastPiece = widthOfOnePiece * (diffPieces + 1);
+            console.log("last piece " + widthOfLastPiece);
+            const heightOfOnePiece = h / rows;
+            console.log("height_piece " + heightOfOnePiece);
+            var aspectRatio = widthOfOnePiece / heightOfOnePiece;
+            let height = ((500 / cols) / aspectRatio);
+            setPiecesHeight(height);
+            console.log(height);
+            const canvas = createCanvas(widthOfOnePiece, heightOfOnePiece);
+            const ctx = canvas.getContext("2d");
+            let imagePieces = [];
+            let Pieces = []
+            let i = 1;
+            for (var x = 0; x < rows; x++) {
+                for (var y = 0; y < cols; y++) {
+                    if (i < nbNfts) {
+                        ctx.drawImage(image, y * widthOfOnePiece, x * heightOfOnePiece, widthOfOnePiece, heightOfOnePiece, 0, 0, canvas.width, canvas.height);
+                        imagePieces.push(canvas.toDataURL());
+                        console.log("image_" + i);
+                        console.log("row", x, widthOfOnePiece, "col", y, heightOfOnePiece);
+                    }
+                    if (i == nbNfts) {
+                        ctx.drawImage(image, y * widthOfOnePiece, x * heightOfOnePiece, widthOfLastPiece, heightOfOnePiece, 0, 0, canvas.width, canvas.height);
+                        imagePieces.push(canvas.toDataURL());
+                        console.log("image_" + i);
+                        console.log("row", x, widthOfOnePiece, "col", y, heightOfOnePiece);
+                    }
+                    i++;
+                }
+            }
+            setNftPieces(imagePieces);
+            console.log(imagePieces);
+            console.log(Pieces);
+        });
     };
 
     async function uploadFileToIPFS(e) {
@@ -205,6 +267,19 @@ function UploadNft() {
                                     <label className="form-label"></label>
                                     <input type="file" name="file" onChange={changeHandler} />
                                 </div>
+                                {selectedImage && (
+                                    <div>
+                                        {
+                                            nftPieces
+                                                .map((item, index) => (
+                                                    <span key={index} className="border-white">
+                                                        <img width={index + 1 == nftPieces.length ? (500 / lastCol) : (500 / nbrCols)} height={piecesHeight} src={item} alt="" className="border border-white" />
+                                                    </span>
+
+                                                ))}
+
+                                    </div>
+                                )}
                                 <div className="d-flex text-align-center justify-between">
                                     <div>
                                         <button className="create_btn" onClick={uploadFileToIPFS}><i className="ri-file-upload-line"></i>Chargement Fichier</button>
